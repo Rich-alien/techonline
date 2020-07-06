@@ -5,7 +5,7 @@ import Main from './components/Main/Main'
 function App(props) {
   return (
     <div className="App">
-      <Main data={props.data} category={props.category}/>
+      <Main data={props.data} category={props.category} SubCategory={props.SubCategory}/>
     {/*   router!*/}
     </div>
   );

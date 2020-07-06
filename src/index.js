@@ -12,10 +12,15 @@ let data = [
     {CarName: 'Другое', CarImg: 'обводка машины'},
 
 ];
+let SubCategory=[
+    {SubCategoryName:'SubCategoryName'},
+    {SubCategoryName:'SubCategoryName'},
+    {SubCategoryName:'SubCategoryName'},
+]
 let category =[
-    {Category:'Lin1'},
-    {Category:'Lin2'},
-    {Category:'Lin3'},
+    {Category:'Lin1',SubCategoryName:'SubCategoryName'},
+    {Category:'Lin2',SubCategoryName:'SubCategoryName'},
+    {Category:'Lin3',SubCategoryName:'SubCategoryName'},
     {Category:'Lin4'},
     {Category:'Lin5'},
     {Category:'Lin6'},
@@ -33,7 +38,7 @@ let category =[
 ];
 ReactDOM.render(
     <React.StrictMode>
-        <App data={data} category={category}/>
+        <App data={data} category={category} SubCategory={SubCategory}/>
     </React.StrictMode>,
     document.getElementById('root')
 );

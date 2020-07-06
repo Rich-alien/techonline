@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './SubChooseCategory.module.css'
-import CategoryItem from "./CategoryItem/CategoryItem";
+import SubCategoryItem from "./SubCategoryItem/SubCategoryItem";
 
 
 const SubChooseCategory = (props) => {
-    let item = props.Category.map(e=><CategoryItem SubCategory={e.SubCategory} />)
+    let item = props.SubCategory.map(e=><SubCategoryItem SubCategoryName={e.SubCategoryName} />)
     return (
         <div className={style.container}>
             {
