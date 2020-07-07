@@ -11,6 +11,11 @@ let ObjItem = [
     {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
     {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
     {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
 ]
 
 const TotalItem = () => {
