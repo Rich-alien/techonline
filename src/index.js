@@ -18,9 +18,9 @@ let SubCategory=[
     {SubCategoryName:'SubCategoryName'},
 ]
 let category =[
-    {Category:'Lin1',SubCategoryName:'SubCategoryName'},
-    {Category:'Lin2',SubCategoryName:'SubCategoryName'},
-    {Category:'Lin3',SubCategoryName:'SubCategoryName'},
+    {Category:'Lin1'},
+    {Category:'Lin2'},
+    {Category:'Lin3'},
     {Category:'Lin4'},
     {Category:'Lin5'},
     {Category:'Lin6'},
