@@ -1,8 +1,11 @@
 .container {
-
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*!*justify-content: center;*!*/
+/*    align-items: center;*/
     min-width: 100%;
     height: 700px;
-    border: 3px solid black;
+    /*border: 3px solid black;*/
 }
 
 
@@ -19,10 +22,11 @@
 }
 
 .sort {
-    width: 100%;
+    margin: 0 auto;
+    min-width: 1366px;
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    /*margin: 10px;*/
 
 }
 
@@ -50,6 +54,12 @@
     /*border: 1px solid red;*/
     color: #4189DD;
 /*    настроить псевдакласс для кнопки*/
+}
+.catalog{
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1366px;
 }
 
 .sortUp {

@@ -3,11 +3,14 @@ import style from './TotalItem.module.css';
 import Item from "./Item/Item";
 // заменить sortUp and SortDown на иконки
 let ObjItem = [
-    {ObjName:'Fuck1',ObjImg:'fuck2',ObjPrice:'123rub'},
-    {ObjName:'Fuck1',ObjImg:'fuck2',ObjPrice:'123rub'},
-    {ObjName:'Fuck1',ObjImg:'fuck2',ObjPrice:'123rub'},
-    {ObjName:'Fuck1',ObjImg:'fuck2',ObjPrice:'123rub'},
-    {ObjName:'Fuck1',ObjImg:'fuck2',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
+    {ObjName:'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',ObjImg:'SomeImg',ObjPrice:'123rub'},
 ]
 
 const TotalItem = () => {
@@ -31,9 +34,11 @@ let    ElementItem = ObjItem.map(e=> <Item ObjName={e.ObjName} ObjImg={e.ObjImg}
                </div>
             </div>
         </div>
-            {
-                ElementItem
-            }
+          <div className={style.catalog}>
+              {
+                  ElementItem
+              }
+          </div>
         </div>
     )
 }
