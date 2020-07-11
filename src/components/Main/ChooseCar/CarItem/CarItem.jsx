@@ -3,18 +3,23 @@ import style from './CarItem.module.css'
 
 
 const CarItem = (props) => {
+    let chooseCar=() =>{
+        // alert(`${props.id}`)
+
+    }
     return (
-        <div className={style.container}>
-            <div className={style.CarName}>
-                {props.CarName}
-            </div>
+        <div onClick={chooseCar} className={style.container}>
+
             <div className={style.CarImg}>
                 {props.CarImg}
 
             </div>
-            <button className={style.btn}>
-                Выбрать
-            </button>
+            <div className={style.CarName}>
+                {props.CarName}
+            </div>
+            {/*<button className={style.btn}>*/}
+            {/*    Выбрать*/}
+            {/*</button>*/}
         </div>
     )
 }
