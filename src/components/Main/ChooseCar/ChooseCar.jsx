@@ -4,11 +4,17 @@ import CarItem from "./CarItem/CarItem";
 
 const ChooseCar = (props) => {
 
-    let CarItems = props.data.map(e => <CarItem CarName={e.CarName} CarImg={e.CarImg}/>);
+
+    let CarItems = props.data.map((e,id) => <CarItem key={id} id={e.id} CarName={e.CarName} CarImg={e.CarImg}/>);
     return (
-        <div className={style.container}>
-            {CarItems}
-        </div>
+        <div  className={style.container}>
+            {
+                CarItems
+            }
+
+         </div>
+
+
     )
 }
 
