@@ -16,11 +16,11 @@ let state = {
         {ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff', ObjImg: 'SomeImg', ObjPrice: '123rub'},
     ],
      data : [
-        {CarName: 'Lada Granta', CarImg: 'IMG'},
-        {CarName: 'Lada Granta', CarImg: 'IMG'},
-        {CarName: 'Lada Granta', CarImg: 'IMG'},
-        {CarName: 'Lada Granta', CarImg: 'IMG'},
-        {CarName: 'Другое', CarImg: 'обводка машины'},
+        {id:'0',CarName: 'Lada Granta', CarImg: 'IMG'},
+        {id:'1',CarName: 'Lada Granta', CarImg: 'IMG'},
+        {id:'2',CarName: 'Lada Granta', CarImg: 'IMG'},
+        {id:'3',CarName: 'Lada Granta', CarImg: 'IMG'},
+        {id:'4',CarName: 'Другое', CarImg: 'обводка машины'},
 
     ],
      SubCategory:[
@@ -48,4 +48,7 @@ let state = {
 
     ],
 }
+//сделать подобъекты на каждую страничку
+// то есть mainPage
+// searchPage и т.д.
 export default state;
