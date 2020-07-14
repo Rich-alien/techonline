@@ -1,14 +1,22 @@
 import React from 'react';
 import './App.css';
 import Main from './components/Main/Main'
+// import store from "./Redux/state";
 
 function App(props) {
-  return (
-    <div className="App">
-      <Main data={props.appState.data} category={props.appState.category} SubCategory={props.appState.SubCategory} ObjItem={props.appState.ObjItem}/>
-    {/*   router!*/}
-    </div>
-  );
+    return (
+        <div className="App">
+            <Main
+                DescriptionPage={props.appState.DescriptionPage}
+                mainPage={props.appState.mainPage}
+                openCategory={props.updateStyle}
+                categoryDisplay={props.categoryDisplay}
+                addReviews={props.addReviews}
+                updateNewReviewsText={props.updateNewReviewsText}
+            />
+            {/*   router!*/}
+        </div>
+    );
 }
 
 export default App;
