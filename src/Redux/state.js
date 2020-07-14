@@ -1,6 +1,34 @@
- let store = {
+let store = {
+    stateDisplay: {
+        subCategoryDisplay: 'flex',
+    },
     _state: {
+        DescriptionPage: {
+            Reviews: [
+                {
+                    id: 0, author: 'Rich', msg: 'fuck', star: 5,
+                },
+                {
+                    id: 1, author: 'Rich', msg: 'fuck', star: 5,
+                },
+                {
+                    id: 2, author: 'Rich', msg: 'fuck', star: 5,
+                },
+                {
+                    id: 3, author: 'Rich', msg: 'fuck', star: 5,
+                },
+                {
+                    id: 4, author: 'Rich', msg: 'fuck', star: 5,
+                },
+                {
+                    id: 5, author: 'Rich', msg: 'fuck', star: 5,
+                },
+            ],
+            newReviewText: ' ',
+        },
+
         mainPage: {
+
             ObjItem: [
                 {
                     ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
@@ -100,12 +128,16 @@
                 {Category: 'Lin16'},
 
             ],
-
-
         }
     },
+
+    categoryDisplay: 'none',
+    openCategory() {
+        this.categoryDisplay = 'flex';
+        this._callSubscriber(this._state);
+        },
     _callSubscriber() {
-       console.log('state changed')
+        console.log('state changed')
     },
     getState() {
         return this._state;
@@ -113,6 +145,25 @@
     subscribe(observer) {
         this._callSubscriber = observer;
     },
+    addReviews() {
+
+        let newReviews = {
+            id: this._state.DescriptionPage.Reviews.length + 1,
+            author: 'Rich',
+            msg: this._state.DescriptionPage.newReviewText,
+            star: 5,
+        };
+        this._state.DescriptionPage.Reviews.push(newReviews);
+        this._state.DescriptionPage.newReviewText = '';
+        this._callSubscriber(this._state);
+    },
+    updateNewReviewsText(value) {
+        this._state.DescriptionPage.newReviewText = value;
+        this._callSubscriber(this._state);
+    },
+
+
 }
 
+window.store = store;
 export default store;
