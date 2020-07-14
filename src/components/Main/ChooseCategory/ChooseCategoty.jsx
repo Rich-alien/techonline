@@ -4,12 +4,28 @@ import CategoryItem from "./CategoryItem/CategoryItem";
 
 
 const ChooseCategory = (props) => {
-    let item = props.category.map(e=><CategoryItem Category={e.Category} />)
+    let item = props.category.map(e=><CategoryItem
+        Category={e.Category}
+        // stateDisplay = {props.stateDisplay}
+
+    />);
+    //props.stateDisplay.categoryDisplay
+    // let styleDisplay = 'none';
+    let styleDisplay = props.categoryDisplay;
+    let inform =()=>{
+
+    }
     return (
         <div className={style.container}>
-            {
-                item
-            }
+
+            <div style={{display: styleDisplay}} >
+                {
+
+                    item
+                }
+
+            </div>
+            <button onClick={inform}></button>
         </div>
     )
 }

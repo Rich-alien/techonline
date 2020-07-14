@@ -4,7 +4,7 @@ import style from './CategoryItem.module.css'
 
 const CategoryItem = (props) => {
     return (
-        <button className={style.container}>
+        <button  className={style.container}>
 
                 {props.Category}
 

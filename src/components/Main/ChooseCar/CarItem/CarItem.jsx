@@ -3,12 +3,11 @@ import style from './CarItem.module.css'
 
 
 const CarItem = (props) => {
-    let chooseCar=() =>{
-        // alert(`${props.id}`)
-
+    let reRenderCar=() =>{
+        props.openCategory();
     }
     return (
-        <div onClick={chooseCar} className={style.container}>
+        <div onClick={reRenderCar} className={style.container}>
 
             <div className={style.CarImg}>
                 {props.CarImg}
@@ -17,9 +16,6 @@ const CarItem = (props) => {
             <div className={style.CarName}>
                 {props.CarName}
             </div>
-            {/*<button className={style.btn}>*/}
-            {/*    Выбрать*/}
-            {/*</button>*/}
         </div>
     )
 }
