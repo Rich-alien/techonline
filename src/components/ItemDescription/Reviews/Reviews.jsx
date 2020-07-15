@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Reviews.module.css"
 import Review from "./Review/Review";
+import {addReview, updateNewReviewsText} from "../../../Redux/state";
 
 const Reviews = (props) => {
     let newReviewsElement = React.createRef();
@@ -12,11 +13,11 @@ const Reviews = (props) => {
         msg={e.msg}
     />);
     let addReviews = () => {
-        props.addReviews();
+        props.dispatch(addReview());
     }
     let onMsgChange = () => {
         let text = newReviewsElement.current.value;
-        props.updateNewReviewsText(text);
+        props.dispatch(updateNewReviewsText(text));
 
     }
     return (

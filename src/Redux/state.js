@@ -1,3 +1,10 @@
+const OPEN_CATEGORY = 'OPEN-CATEGORY',
+    ADD_REVIEWS = 'ADD-REVIEWS',
+    UPDATE_NEW_REVIEWS_TEXT = 'UPDATE-NEW-REVIEWS-TEXT';
+
+export let openCategory = () => ({type: OPEN_CATEGORY});
+export let addReview = () => ({type: ADD_REVIEWS});
+export let updateNewReviewsText = (text) => ({type: UPDATE_NEW_REVIEWS_TEXT, value: text})
 let store = {
     stateDisplay: {
         subCategoryDisplay: 'flex',
@@ -128,14 +135,35 @@ let store = {
                 {Category: 'Lin16'},
 
             ],
+        },
+        categoryDisplay: 'none',
+    },
+    dispatch(action) {
+        switch (action.type) {
+            case OPEN_CATEGORY:
+                this._state.categoryDisplay = 'flex';
+                this._callSubscriber(this._state);
+                break;
+            case ADD_REVIEWS:
+                let newReviews = {
+                    id: this._state.DescriptionPage.Reviews.length + 1,
+                    author: 'Rich',
+                    msg: this._state.DescriptionPage.newReviewText,
+                    star: 5,
+                };
+                this._state.DescriptionPage.Reviews.push(newReviews);
+                this._state.DescriptionPage.newReviewText = '';
+                this._callSubscriber(this._state);
+                break;
+            case UPDATE_NEW_REVIEWS_TEXT:
+                this._state.DescriptionPage.newReviewText = action.value;
+                this._callSubscriber(this._state);
+                break;
+            default:
+                console.log('не правильно названна функция')
         }
     },
 
-    categoryDisplay: 'none',
-    openCategory() {
-        this.categoryDisplay = 'flex';
-        this._callSubscriber(this._state);
-        },
     _callSubscriber() {
         console.log('state changed')
     },
@@ -145,24 +173,6 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    addReviews() {
-
-        let newReviews = {
-            id: this._state.DescriptionPage.Reviews.length + 1,
-            author: 'Rich',
-            msg: this._state.DescriptionPage.newReviewText,
-            star: 5,
-        };
-        this._state.DescriptionPage.Reviews.push(newReviews);
-        this._state.DescriptionPage.newReviewText = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewReviewsText(value) {
-        this._state.DescriptionPage.newReviewText = value;
-        this._callSubscriber(this._state);
-    },
-
-
 }
 
 window.store = store;

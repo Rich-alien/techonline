@@ -7,12 +7,10 @@ function App(props) {
     return (
         <div className="App">
             <Main
+                dispatch={props.dispatch}
+                categoryDisplay={props.appState.categoryDisplay}
                 DescriptionPage={props.appState.DescriptionPage}
                 mainPage={props.appState.mainPage}
-                openCategory={props.updateStyle}
-                categoryDisplay={props.categoryDisplay}
-                addReviews={props.addReviews}
-                updateNewReviewsText={props.updateNewReviewsText}
             />
             {/*   router!*/}
         </div>

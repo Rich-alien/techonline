@@ -5,7 +5,7 @@ import CarItem from "./CarItem/CarItem";
 const ChooseCar = (props) => {
 
     let CarItems = props.data.map((e, id) => <CarItem
-        openCategory={props.openCategory}
+        dispatch={props.dispatch}
         key={id}
         id={e.id}
         CarName={e.CarName}
