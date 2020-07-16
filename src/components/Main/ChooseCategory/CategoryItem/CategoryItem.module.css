@@ -1,6 +1,13 @@
-.container {
-    padding: 20px 40px;
-    margin-right: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
+.container{
+    border: 1px solid purple;
+    height: 100px;
+    width: 300px;
+    background-color: darkgrey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:1px;
+    cursor: pointer;
+
 }
