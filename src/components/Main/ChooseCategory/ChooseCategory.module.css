@@ -1,9 +1,36 @@
 .container{
+    max-width: 1366px;
     display: flex;
-    /*border: 3px solid black;*/
+    flex-direction: column;
+    height: 800px;
     justify-content: center;
-    width: auto;
+}
+.btn_svg{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.btn{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.underBlock{
+    display: flex;
+    justify-content: space-between;
+}
+.categoryContainer{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    height: auto;
     margin: 10px;
-    padding: 10px;
-    /*height: 900px;*/
+    padding: 20px;
+}
+
+.text{
+
+    align-items: center;
 }
