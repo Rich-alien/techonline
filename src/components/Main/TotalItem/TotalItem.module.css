@@ -13,21 +13,18 @@
     display: flex;
     justify-content: space-between;
     height: auto;
-    /*border:1px solid black;*/
-    /*margin: 15px;*/
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
-
     background-color: #eeeeee;
 }
 
+
 .sort {
+    padding:10px 0;
     margin: 0 auto;
     min-width: 1366px;
     display: flex;
     justify-content: space-between;
-    /*margin: 10px;*/
-
 }
 
 .StanDart {
@@ -37,6 +34,19 @@
     margin-left: 30px;
 
     /*height: 100%;*/
+}
+.btn_svg{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.underBlock{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text{
+    align-items: center;
 }
 
 .btn {
@@ -53,6 +63,8 @@
 .btn:hover {
     /*border: 1px solid red;*/
     color: #4189DD;
+    border-top: 1px solid #4189DD;
+    border-bottom: 1px solid #4189DD;
     /*    настроить псевдакласс для кнопки*/
 }
 
