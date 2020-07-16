@@ -4,11 +4,11 @@ import {openCategory} from "../../../../Redux/state";
 
 
 const CarItem = (props) => {
-    let reRenderCar=() =>{
+    let openCategoryNow=() =>{
         props.dispatch(openCategory());
     }
     return (
-        <div onClick={reRenderCar} className={style.container}>
+        <div onClick={openCategoryNow} className={style.container}>
 
             <div className={style.CarImg}>
                 {props.CarImg}
