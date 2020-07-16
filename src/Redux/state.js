@@ -2,11 +2,18 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     ADD_REVIEWS = 'ADD-REVIEWS',
     UPDATE_NEW_REVIEWS_TEXT = 'UPDATE-NEW-REVIEWS-TEXT',
     OPEN_SUB_CATEGORY = 'OPEN-SUB-CATEGORY',
-    OPEN_TITLE = 'OPEN-TITLE';
+    OPEN_TITLE = 'OPEN-TITLE',
+    CLOSE_TITLE = 'CLOSE-TITLE',
+    CLOSE_SUB_CATEGORY = 'CLOSE-SUB-CATEGORY',
+    CLOSE_CATEGORY = 'CLOSE-CATEGORY';
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
 export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
 export let openTitle = () => ({type: OPEN_TITLE});
+export let closeTitle = () => ({type: CLOSE_TITLE});
+export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
+export let closeCategory = () => ({type: CLOSE_CATEGORY});
+
 export let updateNewReviewsText = (text) => ({type: UPDATE_NEW_REVIEWS_TEXT, value: text});
 export let addReview = () => ({type: ADD_REVIEWS});
 let store = {
@@ -189,6 +196,24 @@ let store = {
                 this._state.styleBlock.totalItem = 'block';
                 this._state.styleBlock.subCategoryDisplay = 'none';
                 this._state.mainPage.nowTitleUnderBlock = this._state.mainPage.titleUnderBLock.titleTotalItem;
+                this._callSubscriber(this._state);
+                break;
+            case CLOSE_TITLE:
+                this._state.styleBlock.totalItem = 'none';
+                this._state.styleBlock.subCategoryDisplay = 'flex';
+                this._state.mainPage.nowTitleUnderBlock = this._state.mainPage.titleUnderBLock.titleChooseSubCategory;
+                this._callSubscriber(this._state);
+                break;
+            case CLOSE_SUB_CATEGORY:
+                this._state.styleBlock.subCategoryDisplay = 'none';
+                this._state.styleBlock.categoryDisplay = 'flex';
+                this._state.mainPage.nowTitleUnderBlock = this._state.mainPage.titleUnderBLock.titleChooseCategory;
+                this._callSubscriber(this._state);
+                break;
+            case CLOSE_CATEGORY:
+                this._state.styleBlock.categoryDisplay = 'none';
+                this._state.styleBlock.chooseCar = 'flex';
+                this._state.mainPage.nowTitleUnderBlock = this._state.mainPage.titleUnderBLock.titleChooseCar;
                 this._callSubscriber(this._state);
                 break;
             case ADD_REVIEWS:
