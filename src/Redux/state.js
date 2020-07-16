@@ -44,7 +44,6 @@ let store = {
             ],
             newReviewText: ' ',
         },
-
         mainPage: {
 
             ObjItem: [
@@ -140,6 +139,20 @@ let store = {
                 {id: 0, SubCategoryName: 'SubCategoryName'},
                 {id: 1, SubCategoryName: 'SubCategoryName'},
                 {id: 2, SubCategoryName: 'SubCategoryName'},
+                {id: 3, SubCategoryName: 'SubCategoryName'},
+                {id: 4, SubCategoryName: 'SubCategoryName'},
+                {id: 5, SubCategoryName: 'SubCategoryName'},
+                {id: 6, SubCategoryName: 'SubCategoryName'},
+                {id: 7, SubCategoryName: 'SubCategoryName'},
+                {id: 8, SubCategoryName: 'SubCategoryName'},
+                {id: 9, SubCategoryName: 'SubCategoryName'},
+                {id: 10, SubCategoryName: 'SubCategoryName'},
+                {id: 11, SubCategoryName: 'SubCategoryName'},
+                {id: 12, SubCategoryName: 'SubCategoryName'},
+                {id: 13, SubCategoryName: 'SubCategoryName'},
+                {id: 14, SubCategoryName: 'SubCategoryName'},
+                {id: 15, SubCategoryName: 'SubCategoryName'},
+
             ],
             category: [
                 {id: 0, Category: 'Lin1'},
