@@ -1,10 +1,29 @@
-.container {
+.container{
+    max-width: 1366px;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    /*border: 2px solid black;*/
-    height: 300px;
-    width: auto;
-    color: white;
+    height: 800px;
+    justify-content: center;
+}
+.btn_svg{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.categoryContainer{
+    display: flex;
+    flex-wrap: wrap;
 
+    justify-content: center;
+    height: auto;
+    margin: 10px;
+    padding: 20px;
+}
+.underBlock{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text{
+    align-items: center;
 }
