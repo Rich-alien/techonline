@@ -174,10 +174,10 @@ let store = {
 
             ],
             titleUnderBLock: {
-                titleChooseCar: '(1)',
-                titleChooseCategory: '(2)',
-                titleChooseSubCategory: '(3)',
-                titleTotalItem: '(4)',
+                titleChooseCar: '(1) Выберите машину',
+                titleChooseCategory: '(2) Выберите категорию',
+                titleChooseSubCategory: '(3) Выберите подкатегорию',
+                titleTotalItem: '(4) Список ',
 
             },
             nowTitleUnderBlock: '(1)',
