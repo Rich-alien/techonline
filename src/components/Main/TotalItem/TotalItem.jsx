@@ -1,13 +1,22 @@
 import React from 'react';
 import style from './TotalItem.module.css';
 import Item from "./Item/Item";
+import {closeTitle} from "../../../Redux/state";
 // заменить sortUp and SortDown на иконки
 
 
 const TotalItem = (props) => {
-    let ElementItem = props.ObjItem.map(e => <Item ObjName={e.ObjName} ObjImg={e.ObjImg} ObjPrice={e.ObjPrice}/>)
+    let ElementItem = props.ObjItem.map(e => <Item
+        key={e.id}
+        ObjName={e.ObjName}
+        ObjImg={e.ObjImg}
+        ObjPrice={e.ObjPrice}/>)
+    let styleDisplay=props.totalItem;
+    let goBack = ()=>{
+        props.dispatch(closeTitle());
+    }
     return (
-        <div className={style.container}>
+        <div style={{display:styleDisplay}} className={style.container}>
             <div className={style.SettingBar}>
 
                 <div className={style.sort}>
@@ -15,6 +24,11 @@ const TotalItem = (props) => {
                         {/*изменить className*/}
                         а....я
                     </button>
+                    <div>
+                        <div className={style.btn} onClick={goBack}>
+                            Вернуться назад
+                        </div>
+                    </div>
                     <div>
                         <button className={`${style.btn} ${style.sortUp}`}>
                             по цене, дорогие
