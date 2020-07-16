@@ -2,9 +2,10 @@
     position: relative;
     background: #eeeeee;
     border: 4px solid #666766;
-    height: 100%;
+    height: 400px;
     margin: 5px;
     cursor: pointer;
+    width: 316px;
 
 }
 .container:after, .container:before {
