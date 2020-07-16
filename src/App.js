@@ -8,7 +8,7 @@ function App(props) {
         <div className="App">
             <Main
                 dispatch={props.dispatch}
-                categoryDisplay={props.appState.categoryDisplay}
+                styleBlock={props.appState.styleBlock}
                 DescriptionPage={props.appState.DescriptionPage}
                 mainPage={props.appState.mainPage}
             />
