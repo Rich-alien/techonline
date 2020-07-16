@@ -1,9 +1,23 @@
-.container{
+.container {
+    max-width: 1366px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carContainer {
     display: flex;
     justify-content: center;
-    width: auto;
-    height: 400px;
-    /*border: 2px solid black;*/
-    margin: 10px;
+    align-items: center;
+    max-width: 100%;
+    height: 700px;
+    /*margin: 10px;*/
     border-radius: 3px;
+}
+
+.text {
+
+    width: 100%;
+    text-align: left;
+    padding-top: 100px;
+    /*padding-left: 15px;*/
 }
