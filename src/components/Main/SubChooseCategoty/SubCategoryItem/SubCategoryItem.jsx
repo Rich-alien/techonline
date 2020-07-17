@@ -1,6 +1,6 @@
 import React from "react";
 import style from './SubCategoryItem.module.css'
-import {openTitle} from "../../../../Redux/state";
+import {openTitle} from "../../../../Redux/mainReducer";
 
 const SubCategoryItem = (props) => {
     let openTitleNow=()=>{

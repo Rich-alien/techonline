@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './CarItem.module.css'
-import {openCategory} from "../../../../Redux/state";
+import {openCategory} from "../../../../Redux/mainReducer";
 
 
 const CarItem = (props) => {

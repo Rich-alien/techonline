@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './TotalItem.module.css';
 import Item from "./Item/Item";
-import {closeTitle} from "../../../Redux/state";
+import {closeTitle} from "../../../Redux/mainReducer";
 // заменить sortUp and SortDown на иконки
 
 

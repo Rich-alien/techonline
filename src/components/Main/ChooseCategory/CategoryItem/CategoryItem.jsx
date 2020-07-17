@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './CategoryItem.module.css'
-import {openSubCategory} from "../../../../Redux/state";
+import {openSubCategory} from "../../../../Redux/mainReducer";
 
 
 const CategoryItem = (props) => {

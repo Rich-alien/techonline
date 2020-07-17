@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './SubChooseCategory.module.css'
 import SubCategoryItem from "./SubCategoryItem/SubCategoryItem";
-import {closeSubCategory} from "../../../Redux/state";
+import {closeSubCategory} from "../../../Redux/mainReducer";
 import closeBtnSvg from "../../../close.svg";
 
 
