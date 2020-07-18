@@ -11,6 +11,7 @@ function App(props) {
                 styleBlock={props.appState.styleBlock}
                 DescriptionPage={props.appState.DescriptionPage}
                 mainPage={props.appState.mainPage}
+                store={props.store}
             />
             {/*   router!*/}
         </div>
