@@ -1,14 +1,13 @@
 import React from 'react';
 import style from './CarItem.module.css'
-import {openCategory} from "../../../../Redux/mainReducer";
 
 
 const CarItem = (props) => {
-    let openCategoryNow=() =>{
-        props.dispatch(openCategory());
+    let onOpenCategoryNow=() =>{
+        props.openCategoryNow();
     }
     return (
-        <div onClick={openCategoryNow} className={style.container}>
+        <div onClick={onOpenCategoryNow} className={style.container}>
 
             <div className={style.CarImg}>
                 {props.CarImg}
