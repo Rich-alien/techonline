@@ -1,19 +1,19 @@
 import React from 'react';
 import style from './SubChooseCategory.module.css'
-import SubCategoryItem from "./SubCategoryItem/SubCategoryItem";
-import {closeSubCategory} from "../../../Redux/mainReducer";
 import closeBtnSvg from "../../../close.svg";
+import SubCategoryItemContainer from "./SubCategoryItem/SubCategoryItemContiner";
 
 
 const SubChooseCategory = (props) => {
-    let item = props.SubCategory.map(e => <SubCategoryItem
+    let item = props.SubCategory.map(e => <SubCategoryItemContainer
+        store={props.store}
         key={e.id}
         SubCategoryName={e.SubCategoryName}
         dispatch={props.dispatch}
     />)
-    let styleDisplay = props.subCategoryDisplay;
+    let styleDisplay = props.styleDisplay;
     let goBack =()=>{
-        props.dispatch(closeSubCategory())
+       props.goBack();
     }
     return (
         <div style={{display: styleDisplay}} className={style.container}>
@@ -21,7 +21,7 @@ const SubChooseCategory = (props) => {
 
                 <div className={style.text}>
                     {
-                        props.titleUnderBlock.titleChooseSubCategory
+                        props.titleUnderBlock
                     }
                 </div>
                 <img onClick={goBack} className={style.btn_svg} src={closeBtnSvg} alt="btn-back"/>
