@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './TotalItem.module.css';
 import Item from "./Item/Item";
-import {closeTitle} from "../../../Redux/mainReducer";
 // заменить sortUp and SortDown на иконки
 
 
@@ -11,9 +10,9 @@ const TotalItem = (props) => {
         ObjName={e.ObjName}
         ObjImg={e.ObjImg}
         ObjPrice={e.ObjPrice}/>)
-    let styleDisplay=props.totalItem;
+    let styleDisplay=props.styleDisplay;
     let goBack = ()=>{
-        props.dispatch(closeTitle());
+        props.goBack();
     }
     return (
         <div style={{display:styleDisplay}} className={style.container}>
