@@ -5,12 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from "./Redux/storeRedux";
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <App
                 store = {store}
-                appState={state}
                 dispatch={store.dispatch.bind(store)}
             />
         </React.StrictMode>,
