@@ -283,7 +283,7 @@ let mainPageData = {
         {id: 15, Category: 'Lin16'},
 
     ],
-    titleUnderBLock: {
+    titleUnderBlock: {
         titleChooseCar: '(1) Выберите машину',
         titleChooseCategory: '(2) Выберите категорию',
         titleChooseSubCategory: '(3) Выберите подкатегорию',
@@ -304,32 +304,32 @@ const mainReducer = (state = mainPageData, action) => {
         case OPEN_CATEGORY:
             state.styleBlock.categoryDisplay = 'flex';
             state.styleBlock.chooseCar = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleChooseCategory;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCategory;
             return state;
         case OPEN_SUB_CATEGORY:
             state.styleBlock.subCategoryDisplay = 'flex';
             state.styleBlock.categoryDisplay = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleChooseSubCategory;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseSubCategory;
             return state;
         case OPEN_TITLE:
             state.styleBlock.totalItem = 'block';
             state.styleBlock.subCategoryDisplay = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleTotalItem;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleTotalItem;
             return state;
         case CLOSE_TITLE:
             state.styleBlock.totalItem = 'none';
             state.styleBlock.subCategoryDisplay = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleChooseSubCategory;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseSubCategory;
             return state;
         case CLOSE_SUB_CATEGORY:
             state.styleBlock.subCategoryDisplay = 'none';
             state.styleBlock.categoryDisplay = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleChooseCategory;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCategory;
             return state;
         case CLOSE_CATEGORY:
             state.styleBlock.categoryDisplay = 'none';
             state.styleBlock.chooseCar = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBLock.titleChooseCar;
+            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCar;
             return state;
         default:
             console.log('не правильно названна функция');
