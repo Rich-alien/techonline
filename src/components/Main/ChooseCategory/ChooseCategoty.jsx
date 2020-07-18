@@ -1,19 +1,17 @@
 import React from 'react';
 import style from './ChooseCategory.module.css'
-import CategoryItem from "./CategoryItem/CategoryItem";
-import {closeCategory} from "../../../Redux/mainReducer";
-// import ButtonClose from "../../CloseButton/ButtonClose";
 import closeBtnSvg from "../../.././close.svg"
+import CategoryItemContainer from "./CategoryItem/CategoryItemContainer";
 
 const ChooseCategory = (props) => {
-    let item = props.category.map(e=><CategoryItem
-        dispatch={props.dispatch}
+    let item = props.category.map(e=><CategoryItemContainer
+        store={props.store}
         key={e.id}
         Category={e.Category}
     />);
-    let styleDisplay = props.categoryDisplay;
+    let styleDisplay = props.styleDisplay;
     let goBack=()=>{
-        props.dispatch(closeCategory())
+        props.goBack();
     }
     return (
         <div style={{display: styleDisplay}} className={style.container}>
@@ -21,7 +19,7 @@ const ChooseCategory = (props) => {
 
                 <div className={style.text}>
                     {
-                        props.titleUnderBlock.titleChooseCategory
+                        props.titleUnderBlock
                     }
                 </div>
 

@@ -1,14 +1,13 @@
 import React from 'react';
 import style from './CategoryItem.module.css'
-import {openSubCategory} from "../../../../Redux/mainReducer";
 
 
 const CategoryItem = (props) => {
-    let openSubCategoryNow=()=>{
-        props.dispatch(openSubCategory())
+    let onOpenSubCategoryNow=()=>{
+        props.openSubCategoryNow();
     }
     return (
-        <button onClick={openSubCategoryNow} className={style.container}>
+        <button onClick={onOpenSubCategoryNow} className={style.container}>
 
                 {props.Category}
 
