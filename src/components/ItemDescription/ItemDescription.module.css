@@ -6,7 +6,51 @@
 }
 
 .informationLine {
+    margin-top: 50px;
+    border-bottom: 2px solid;
+}
+.countContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.textFotCount{
+    margin-top: 100px;
+}
+.countMinus{
+    font-size: 25px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border:2px solid black;
+    border-radius:100px 0 0 100px;
 
+}
+.countPlus{
+    font-size: 25px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border:2px solid black;
+    border-radius:0 100px 100px 0;
+}
+.countInt{
+    font-size: 25px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+}
+.mainDescription {
+    margin-top: 50px;
+    color: black;
 }
 
 .img {
