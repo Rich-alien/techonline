@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 1366px;
+    height: auto;
+}
+
+.informationLine {
+
+}
+
+.img {
+    min-width: 655px;
+    height: 700px;
+    background-color: black;
+    margin-right: 10px;
+}
+
+.Description {
+    margin-left: 82px;
+    width: 655px;
+    display: flex;
+    flex-direction: column;
+    /*width:auto;*/
+    text-align: left;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    color: white;
+    width: 170px;
+    height: 48px;
+    background-color: black;
+
+
+}
+
+.textPrice {
+    font-size: 25px;
+    letter-spacing: .07em;
+}
+
+.containerDescription {
+
+    display: flex;
+    justify-content: space-between;
+}
