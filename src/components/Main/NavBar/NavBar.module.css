@@ -1,71 +1,92 @@
-.container{
-    height: 60px;
+.container {
+    display: flex;
+    height: 88px;
     width: 100%;
-    background-color: #2d2d2d;
-}
-.btn{
+    background: #FFFFFF;
+    box-shadow: 0px 12px 34px rgba(7, 8, 35, 0.15);
 
 }
-.btnFavorite{
+
+.logo {
+    padding-right: 18px;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 6px;
+    color: #050816;
+
 
 }
-.btnCart{
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnFavorite {
 
 }
-.nav{
+
+.btnCart {
+
+}
+
+.nav {
     box-sizing: border-box;
     max-width: 1366px;
-
     margin: 0 auto;
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
 
 }
-.btn{
-    background-color: #2d2d2d;
+
+.btn {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
     border: none;
-    /*width: 40px;*/
-    /*height: 40px;*/
-    margin-right:25px ;
+    margin-right: 25px;
 
 }
-.searchWidth{
+
+.searchWidth {
+    font-size: 14px;
+    line-height: 16px;
+
     width: 100%;
     display: flex;
-}
-.search{
-    height: 40px;
-    border-radius: 19px/50%;
-    /*адаптивную строку реализовать*/
 
+}
+
+.search {
+
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 15px;
+    color: #A5A6AB;
+    /*color: #2d2d2d;*/
+    background: #9B9CA2;
+    opacity: 0.2;
+    border-radius: 7px;
+    height: 40px;
     width: 100%;
     margin: 0 25px;
+    min-width: 633px;
+    /*color: #ffffff;*/
+    border: none;
+}
 
-}
-form{
-    /*border-left: 1px solid white;*/
-}
-.btnSearch{
+
+.btnSearch {
+    background-color: transparent;
     height: 35px;
-    background-color: white;
-    transform: translate(-80px, 2px);
-    border:none;
+    transform: translate(-86px, 0);
+    border: none;
 }
-.logo{
 
-    line-height: 60px;
-    color:white;
-    /*width: 400px;*/
-    padding-right: 18px;
-    font-size: 53px;
-    /*line-height: 14px;*/
-    /*height: 60px;*/
-    /*border-right: 1px solid white;*/
-
-
-}
-.imgBtn{
+.imgBtn {
     width: 40px;
     height: 40px;
 }

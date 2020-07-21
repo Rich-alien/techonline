@@ -12,28 +12,33 @@ const NavNar = () => {
                     <input className={style.search} type="search" name="q" placeholder="Поиск по сайту"/>
                     {/*<input type="submit" value="Найти"/>*/}
                     <button className={style.btnSearch}>
-                        <img src="https://img.icons8.com/android/24/000000/search.png" alt={'btn search'}/>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search"
+                             width="44" height="44" viewBox="0 0 30 30" strokeWidth="1.5" stroke="#2c3e50" fill="none"
+                             strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"/>
+                            <circle cx="10" cy="10" r="7"/>
+                            <line x1="21" y1="21" x2="15" y2="15"/>
+                        </svg>
                     </button>
                 </form>
                 <button className={`${style.btnFavorite} ${style.btn}`}>
-                    {/*<img className={style.imgBtn} src="https://img.icons8.com/color/48/000000/filled-like.png"*/}
-                    {/*     alt={'btn Favorite'}/>*/}
-
+                    Понравились
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-heart" width="44"
-                         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none"
-                         stroke-linecap="round" stroke-linejoin="round">
+                         height="44" viewBox="0 0 30 30" strokeWidth="1.5" stroke="#2c3e50" fill="none"
+                         strokeLinecap="round" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z"/>
                         <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7"/>
                     </svg>
                 </button>
                 <button className={`${style.btnCart} ${style.btn}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-basket" width="44"
-                         height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                         stroke-linecap="round" stroke-linejoin="round">
+                    Корзина
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart"
+                         width="44" height="44" viewBox="0 0 30 30" strokeWidth="1.5" stroke="#2c3e50" fill="none"
+                         strokeLinecap="round" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z"/>
-                        <polyline points="7 10 12 4 17 10"/>
-                        <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8Z"/>
-                        <circle cx="12" cy="15" r="2"/>
+                        <circle cx="9" cy="19" r="2"/>
+                        <circle cx="17" cy="19" r="2"/>
+                        <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2"/>
                     </svg>
                 </button>
                 {/*    заменить картинки для btnFavorite and btnCart*/}
