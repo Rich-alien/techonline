@@ -4,7 +4,7 @@ import CarItem from "./CarItem";
 
 
 const CarItemContainer = (props) => {
-    let openCategoryNow=() =>{
+    let openCategoryNow = () => {
         props.store.dispatch(openCategory());
     }
     // let state = props.store.getState().mainPage;
