@@ -140,12 +140,12 @@ let mainPageData = {
 
     ],
     titleUnderBlock: {
-        titleChooseCar: '(1) Выберите машину',
-        titleChooseCategory: '(2) Выберите категорию',
-        titleChooseSubCategory: '(3) Выберите подкатегорию',
-        titleTotalItem: '(4) Список ',
+        titleChooseCar: ' Выберите машину',
+        titleChooseCategory: ' Выберите категорию',
+        titleChooseSubCategory: ' Выберите подкатегорию',
+        titleTotalItem: ' Список ',
     },
-    nowTitleUnderBlock: '(1)',
+    nowTitleUnderBlock: '',
     styleBlock: {
         chooseCar: 'flex',
         categoryDisplay: 'none',
