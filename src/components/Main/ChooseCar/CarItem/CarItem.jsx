@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './CarItem.module.css'
-
+import carImg from '../../../../img/ladaVesta2.png'
 
 const CarItem = (props) => {
     let onOpenCategoryNow=() =>{
@@ -10,11 +10,11 @@ const CarItem = (props) => {
         <div onClick={onOpenCategoryNow} className={style.container}>
 
             <div className={style.CarImg}>
-                {props.CarImg}
+                <img className={style.imgCar} src={carImg} alt="love"/>
 
             </div>
             <div className={style.CarName}>
-                {props.CarName}
+                <h1 className={style.CarNameH}>{props.CarName}</h1>
             </div>
         </div>
     )
