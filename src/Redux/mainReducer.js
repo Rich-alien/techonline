@@ -3,15 +3,33 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     OPEN_TITLE = 'OPEN-TITLE',
     CLOSE_TITLE = 'CLOSE-TITLE',
     CLOSE_SUB_CATEGORY = 'CLOSE-SUB-CATEGORY',
-    CLOSE_CATEGORY = 'CLOSE-CATEGORY';
+    CLOSE_CATEGORY = 'CLOSE-CATEGORY',
+    UP_COUNT = 'UP-COUNT',
+    DOWN_COUNT = 'DOWN-COUNT';
 export let openCategory = () => ({type: OPEN_CATEGORY});
 export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
 export let openTitle = () => ({type: OPEN_TITLE});
 export let closeTitle = () => ({type: CLOSE_TITLE});
 export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
 export let closeCategory = () => ({type: CLOSE_CATEGORY});
-let mainPageData = {
+export let upCount = () => ({type: UP_COUNT});
+export let downCount = () => ({type: DOWN_COUNT});
 
+let mainPageData = {
+    viewProduct: {
+        id: 0,
+        ObjName: 'Квадрат Малевича',
+        ObjCount: '10',
+        ObjCountView: '1',
+        ObjDescription: 'Ультракомпактная мультимедийная' +
+            ' беспроводная клавиатура с USB-интерфейсом, выполненная из высококачественных' +
+            ' материалов с прочным металлическим основанием. Комфортные клавиши с мягким' +
+            ' ноутбучным ходом обеспечивают великолепные тактильные' +
+            ' ощущения во время работы, а также низкий уровень шума.',
+        ObjImg: '//',
+        ObjPrice: '1477',
+        ObjTotalPrice: '1477',
+    },
     ObjItem: [
 
         {
@@ -19,6 +37,7 @@ let mainPageData = {
             ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
             ObjImg: 'SomeImg',
             ObjPrice: '123rub'
+
         },
         {
             id: 1,
@@ -157,6 +176,20 @@ let mainPageData = {
 const mainReducer = (state = mainPageData, action) => {
     // debugger;
     switch (action.type) {
+        // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
+        case UP_COUNT:
+            if (state.viewProduct.ObjCountView < state.viewProduct.ObjCount) {
+                state.viewProduct.ObjCountView += 1;
+                state.viewProduct.ObjTotalPrice+= state.viewProduct.ObjPrice;
+            }
+            return state;
+        case DOWN_COUNT:
+            if (state.viewProduct.ObjCountView > 1) {
+                state.viewProduct.ObjCountView-=1;
+                state.viewProduct.ObjTotalPrice-= state.viewProduct.ObjPrice;
+            }
+            return state;
+        /*функции для открытия и закрытя категорий*/
         case OPEN_CATEGORY:
             state.styleBlock.categoryDisplay = 'flex';
             state.styleBlock.chooseCar = 'none';
@@ -187,8 +220,9 @@ const mainReducer = (state = mainPageData, action) => {
             state.styleBlock.chooseCar = 'flex';
             state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCar;
             return state;
+        /*! функции для открытия и закрытя категорий*/
+
         default:
-            console.log('не правильно названна функция');
             return state;
     }
 }
