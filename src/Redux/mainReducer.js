@@ -5,6 +5,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     CLOSE_SUB_CATEGORY = 'CLOSE-SUB-CATEGORY',
     CLOSE_CATEGORY = 'CLOSE-CATEGORY',
     UP_COUNT = 'UP-COUNT',
+    ADD_IN_CART = 'ADD-IN-CART',
     DOWN_COUNT = 'DOWN-COUNT';
 export let openCategory = () => ({type: OPEN_CATEGORY});
 export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
@@ -14,6 +15,7 @@ export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
 export let closeCategory = () => ({type: CLOSE_CATEGORY});
 export let upCount = () => ({type: UP_COUNT});
 export let downCount = () => ({type: DOWN_COUNT});
+export let addInCart = () => ({type: ADD_IN_CART});
 
 let mainPageData = {
     viewProduct: {
@@ -30,6 +32,7 @@ let mainPageData = {
         ObjPrice: 1477,
         ObjTotalPrice: 1477,
     },
+    Cart: [],
     ObjItem: [
 
         {
@@ -176,17 +179,22 @@ let mainPageData = {
 const mainReducer = (state = mainPageData, action) => {
     // debugger;
     switch (action.type) {
+        //Добавление товара в массив Cart
+        //Доработать!
+        case ADD_IN_CART:
+            state.Cart.push(state.viewProduct);
+            return state;
         // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
         case UP_COUNT:
             if (state.viewProduct.ObjCountView < state.viewProduct.ObjCount) {
                 state.viewProduct.ObjCountView += 1;
-                state.viewProduct.ObjTotalPrice+= state.viewProduct.ObjPrice;
+                state.viewProduct.ObjTotalPrice += state.viewProduct.ObjPrice;
             }
             return state;
         case DOWN_COUNT:
             if (state.viewProduct.ObjCountView > 1) {
-                state.viewProduct.ObjCountView-=1;
-                state.viewProduct.ObjTotalPrice-= state.viewProduct.ObjPrice;
+                state.viewProduct.ObjCountView -= 1;
+                state.viewProduct.ObjTotalPrice -= state.viewProduct.ObjPrice;
             }
             return state;
         /*функции для открытия и закрытя категорий*/
