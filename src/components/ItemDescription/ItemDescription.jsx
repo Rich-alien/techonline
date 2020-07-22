@@ -24,10 +24,6 @@ const ItemDescription = (props) => {
                 <h1 className={style.productName}>
                     {props.ObjName}
                 </h1>
-                <div className={style.countryBlock}>
-                    <h2 className={style.productQuestion}>Колличество товара на складе: </h2>
-                    <h2 className={style.productAsk}> {props.ObjCount}</h2>
-                </div>
                 <div className={style.productDirection}>
                     <p className={style.productDirectionText}>
                         {props.ObjDescription}

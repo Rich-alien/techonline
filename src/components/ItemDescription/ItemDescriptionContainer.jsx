@@ -20,7 +20,6 @@ const ItemDescriptionContainer = (props) => {
             upCountNow={upCountNow}
             downCountNow={downCountNow}
             ObjName={state.viewProduct.ObjName}
-            ObjCount={state.viewProduct.ObjCount}
             ObjDescription={state.viewProduct.ObjDescription}
             ObjPrice={state.viewProduct.ObjPrice}
             ObjTotalPrice={state.viewProduct.ObjTotalPrice}
