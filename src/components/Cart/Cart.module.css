@@ -10,6 +10,14 @@
     flex-direction: column;
 
 }
+.CartItemContainer{
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid black;
+    height: auto;
+}
 .buttonBack{
     padding:20px 0;
     outline:none;
