@@ -6,7 +6,11 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     CLOSE_CATEGORY = 'CLOSE-CATEGORY',
     UP_COUNT = 'UP-COUNT',
     ADD_IN_CART = 'ADD-IN-CART',
+    OPEN_SHOPPING_CART = 'OPEN-SHOPPING-CART',
+    CLOSE_SHOPPING_CART = 'ClOSE-SHOPPING-CART',
+    SHOW_CART_ALL_MONEY = 'SHOW-CART-ALL-MONEY',
     DOWN_COUNT = 'DOWN-COUNT';
+
 export let openCategory = () => ({type: OPEN_CATEGORY});
 export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
 export let openTitle = () => ({type: OPEN_TITLE});
@@ -16,6 +20,10 @@ export let closeCategory = () => ({type: CLOSE_CATEGORY});
 export let upCount = () => ({type: UP_COUNT});
 export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
+export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
+export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
+export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
+
 
 let mainPageData = {
     viewProduct: {
@@ -172,17 +180,48 @@ let mainPageData = {
         chooseCar: 'flex',
         categoryDisplay: 'none',
         subCategoryDisplay: 'none',
-        totalItem: 'none'
+        totalItem: 'none',
+        shoppingCart: 'none'
 
     },
+    CartMoney: 0,
 }
 const mainReducer = (state = mainPageData, action) => {
     // debugger;
     switch (action.type) {
+        // сумма в корзине
+        // case SHOW_CART_ALL_MONEY:
+        //     for (let i=0;i<state.Cart.length;i++){
+        //         this.state.CartMonet += this.state.Cart[i].ObjTotalPrice;
+        //     }
+        //     return state;
+        //открытие и закрытие корзины;
+        case OPEN_SHOPPING_CART:
+            state.styleBlock.shoppingCart = 'flex';
+            return state;
+        case CLOSE_SHOPPING_CART:
+            state.styleBlock.shoppingCart = 'none';
+            return state;
         //Добавление товара в массив Cart
         //Доработать!
         case ADD_IN_CART:
-            state.Cart.push(state.viewProduct);
+             let CartObj = {
+                 id: state.Cart.length,
+                 ObjName: state.viewProduct.ObjName,
+                 ObjCount: state.viewProduct.ObjCount,
+                 ObjCountView:state.viewProduct.ObjCountView,
+                 ObjDescription: state.viewProduct.ObjDescription,
+                 ObjImg: state.viewProduct.ObjImg,
+                 ObjPrice: state.viewProduct.ObjPrice,
+                 ObjTotalPrice: state.viewProduct.ObjTotalPrice,
+             }
+            state.Cart.push(CartObj);
+
+            state.CartMoney = 0;
+            for (let i = 0; i < state.Cart.length; i++) {
+                state.CartMoney += state.Cart[i].ObjTotalPrice;
+            }
+            console.log(state.Cart);
             return state;
         // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
         case UP_COUNT:
