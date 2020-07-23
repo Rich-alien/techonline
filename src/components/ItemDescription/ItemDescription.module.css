@@ -6,120 +6,6 @@
     padding-bottom: 102px;
 }
 
-.productQuestion {
-    padding-right: 5px;
-    color: #A5A6AB;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.productAsk {
-    height: auto;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.countryBlock {
-    margin-left: 40px;
-    margin-top: 6px;
-    display: flex;
-    flex-direction: row;
-}
-
-.yearBlock {
-    margin-left: 40px;
-    margin-top: 3px;
-    display: flex;
-    flex-direction: row;
-}
-
-.productDirection {
-    margin-left: 40px;
-    max-width: 338px;
-}
-
-.productDirectionText {
-    text-align: start;
-    font-size: 14px;
-    line-height: 20px;
-    color: #A5A6AB;
-    margin: 0;
-}
-
-.priceBlock {
-    border-radius: 0 0 15px 15px;
-    background-color: #FAFAFA;
-    margin-top: 15px;
-}
-
-
-.priceBlock_Price {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-left: 40px;
-}
-
-
-.priceBlock_PriceText {
-    margin: 0;
-    padding-top: 25px;
-    text-align: start;
-    font-size: 32px;
-    line-height: 37px;
-    letter-spacing: 1px;
-    color: #000000;
-}
-
-.priceBlock_PriceSubText {
-    font-size: 14px;
-    line-height: 16px;
-    margin: 5px 0 0;
-    color: #A5A6AB;
-}
-
-.priceBlock_PriceTextAll {
-    outline: 0;
-    outline-offset: 0;
-    outline:none;
-    margin: 0;
-    text-align: start;
-    font-size: 32px;
-    line-height: 37px;
-    letter-spacing: 1px;
-    color: #000000;
-
-}
-
-.addToCardBlock {
-
-    margin-top: 32px;
-    padding-bottom: 32px;
-}
-
-.btn {
-    outline:none;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 20px;
-    color: #FFFFFF;
-    background: #1CAF45;
-    border-radius: 7px;
-    width: 392px;
-    height: 54px;
-    border: none;
-}
-
-.priceBlock_PriceSubTextAll {
-    outline: 0;
-    outline-offset: 0;
-    outline:none;
-    margin: 0;
-    font-size: 14px;
-    line-height: 16px;
-    color: #A5A6AB;
-}
-
 .productImgContainer {
     display: flex;
     align-items: center;
@@ -160,47 +46,67 @@
     line-height: 32px;
 }
 
-
-.informationLine {
-    margin-top: 50px;
-    border-bottom: 2px solid;
-}
-
-
-.countContainer {
-    outline: 0;
-    outline-offset: 0;
-    outline:none;
+.productDirection {
     margin-left: 40px;
-    display: flex;
-    flex-direction: row;
-
+    max-width: 338px;
 }
 
-.textFotCount {
-    outline: 0;
-    outline-offset: 0;
-    margin-top: 100px;
+.productDirectionText {
+    text-align: start;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A5A6AB;
+    margin: 0;
 }
 
-.priceBlock_AddCount {
-
-    display: flex;
-    margin-top: 24px;
+.priceBlock {
+    border-radius: 0 0 15px 15px;
+    background-color: #FAFAFA;
+    margin-top: 15px;
 }
 
-.priceBlock_CountTotal {
+.priceBlock_Price {
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-left: 40px;
+}
 
+.priceBlock_PriceText {
+    margin: 0;
+    padding-top: 25px;
+    text-align: start;
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+.priceBlock_PriceSubText {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 5px 0 0;
+    color: #A5A6AB;
+}
+
+.priceBlock_AddCount {
+    display: flex;
+    margin-top: 24px;
+}
+
+.countContainer {
+    outline: 0;
+    outline-offset: 0;
+    outline: none;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
 }
 
 .countMinus {
     outline: 0;
     outline-offset: 0;
-    outline:none;
+    outline: none;
     cursor: pointer;
     background-color: #F2F4F6;
     border: 1px solid #EBEBEC;
@@ -212,77 +118,25 @@
     height: 50px;
     align-items: center;
     justify-content: center;
-
-
 }
 
-.containerAddCard {
-    display: flex;
-
-    margin-top: 50px;
-
-
-    flex-direction: row;
-}
-
-.countryContainer {
-
-    display: flex;
-    margin-top: 50px;
-}
-
-.country {
+.countInt {
+    outline: none;
     font-size: 25px;
-    padding: 20px;
-    color: #ffffff;
-    background-color: black;
-}
-
-.NameCountry {
-    font-size: 25px;
-    padding: 20px;
-    color: black;
-}
-
-.yearContainer {
-
     display: flex;
-    margin-top: 50px;
-}
-
-.year {
-    font-size: 25px;
-    padding: 20px;
-    color: #ffffff;
-    background-color: black;
-}
-
-.NameYear {
-    font-size: 25px;
-    padding: 20px;
-    color: black;
-}
-
-.addToCard {
-    margin-left: 45px;
-    min-width: 302px;
-    display: flex;
-    justify-content: center;
-    /*border:1px solid black;*/
+    width: 50px;
+    height: 50px;
     align-items: center;
-    border-radius: 100px;
-    background-color: #000000;
-}
-
-.addToCard_text {
-    color: white;
-    margin-right: 30px;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #EBEBEC;
+    box-sizing: border-box;
 }
 
 .countPlus {
     outline: 0;
     outline-offset: 0;
-    outline:none;
+    outline: none;
     cursor: pointer;
     background-color: #F2F4F6;
     font-size: 25px;
@@ -296,61 +150,49 @@
     border-radius: 0 7px 7px 0;
 }
 
-.countInt {
-    outline:none;
-    font-size: 25px;
-    display: flex;
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    justify-content: center;
-
-    background: #FFFFFF;
-    border: 1px solid #EBEBEC;
-    box-sizing: border-box;
-}
-
-.mainDescription {
-    margin-top: 50px;
-    color: black;
-}
-
-.img {
-    min-width: 655px;
-    height: 700px;
-    background-color: black;
-    margin-right: 10px;
-}
-
-.Description {
-    margin-left: 82px;
-    width: 655px;
+.priceBlock_CountTotal {
     display: flex;
     flex-direction: column;
-    /*width:auto;*/
-    text-align: left;
+    align-items: start;
+    margin-left: 40px;
 }
 
-.price {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    color: white;
-    width: 170px;
-    height: 48px;
-    background-color: black;
+.priceBlock_PriceSubTextAll {
+    outline: 0;
+    outline-offset: 0;
+    outline: none;
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: #A5A6AB;
+}
 
+.priceBlock_PriceTextAll {
+    outline: 0;
+    outline-offset: 0;
+    outline: none;
+    margin: 0;
+    text-align: start;
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    color: #000000;
 
 }
 
-.textPrice {
-    font-size: 25px;
-    letter-spacing: .07em;
+.addToCardBlock {
+    margin-top: 32px;
+    padding-bottom: 32px;
 }
-
-.containerDescription {
-
-    display: flex;
-    justify-content: space-between;
+.btn {
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #1CAF45;
+    border-radius: 7px;
+    width: 392px;
+    height: 54px;
+    border: none;
 }
