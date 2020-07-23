@@ -191,8 +191,8 @@ const mainReducer = (state = mainPageData, action) => {
     switch (action.type) {
         // сумма в корзине
         // case SHOW_CART_ALL_MONEY:
-        //     for (let i=0;i<state.Cart.length;i++){
-        //         this.state.CartMonet += this.state.Cart[i].ObjTotalPrice;
+        //     for (let i=0;i<state.CartItem.length;i++){
+        //         this.state.CartMonet += this.state.CartItem[i].ObjTotalPrice;
         //     }
         //     return state;
         //открытие и закрытие корзины;
@@ -202,7 +202,7 @@ const mainReducer = (state = mainPageData, action) => {
         case CLOSE_SHOPPING_CART:
             state.styleBlock.shoppingCart = 'none';
             return state;
-        //Добавление товара в массив Cart
+        //Добавление товара в массив CartItem
         //Доработать!
         case ADD_IN_CART:
              let CartObj = {
