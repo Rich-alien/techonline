@@ -12,7 +12,6 @@ const ItemDescriptionContainer = (props) => {
     }
     let addInCartNow = () => {
         props.store.dispatch(addInCart())
-        console.log(state.Cart)
     }
     return (
         <ItemDescription
