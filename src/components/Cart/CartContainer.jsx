@@ -9,6 +9,7 @@ const CartContainer = (props) => {
     let state = props.store.getState().mainPage;
     return (
         <Cart
+            Cart={state.Cart}
             store={props.store}
             styleDisplay={state.styleBlock.shoppingCart}
             closeShoppingCartNow={closeShoppingCartNow}
