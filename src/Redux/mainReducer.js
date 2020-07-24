@@ -177,6 +177,7 @@ let mainPageData = {
     },
     nowTitleUnderBlock: '',
     styleBlock: {
+        blur: 'none',
         chooseCar: 'flex',
         categoryDisplay: 'none',
         subCategoryDisplay: 'none',
@@ -196,46 +197,60 @@ const mainReducer = (state = mainPageData, action) => {
         //     }
         //     return state;
         //открытие и закрытие корзины;
-        case OPEN_SHOPPING_CART:
-            state.styleBlock.shoppingCart = 'flex';
-            return state;
-        case CLOSE_SHOPPING_CART:
-            state.styleBlock.shoppingCart = 'none';
-            return state;
+        case OPEN_SHOPPING_CART: {
+            let stateCopy = {...state}
+            stateCopy.styleBlock.shoppingCart = 'flex';
+            stateCopy.styleBlock.blur = 'blur(3px)';
+
+            return stateCopy;}
+        case CLOSE_SHOPPING_CART: {
+            let stateCopy = {...state}
+            stateCopy.styleBlock.shoppingCart = 'none';
+            stateCopy.styleBlock.blur = 'none';
+
+            return stateCopy;}
         //Добавление товара в массив CartItem
         //Доработать!
-        case ADD_IN_CART:
-             let CartObj = {
-                 id: state.Cart.length,
-                 ObjName: state.viewProduct.ObjName,
-                 ObjCount: state.viewProduct.ObjCount,
-                 ObjCountView:state.viewProduct.ObjCountView,
-                 ObjDescription: state.viewProduct.ObjDescription,
-                 ObjImg: state.viewProduct.ObjImg,
-                 ObjPrice: state.viewProduct.ObjPrice,
-                 ObjTotalPrice: state.viewProduct.ObjTotalPrice,
-             }
-            state.Cart.push(CartObj);
+        case ADD_IN_CART: {
+            let CartObj = {
+                id: state.Cart.length,
+                ObjName: state.viewProduct.ObjName,
+                ObjCount: state.viewProduct.ObjCount,
+                ObjCountView: state.viewProduct.ObjCountView,
+                ObjDescription: state.viewProduct.ObjDescription,
+                ObjImg: state.viewProduct.ObjImg,
+                ObjPrice: state.viewProduct.ObjPrice,
+                ObjTotalPrice: state.viewProduct.ObjTotalPrice,
+            }
+            let stateCopy = {...state}
+            stateCopy.Cart.push(CartObj);
 
-            state.CartMoney = 0;
+            stateCopy.CartMoney = 0;
             for (let i = 0; i < state.Cart.length; i++) {
-                state.CartMoney += state.Cart[i].ObjTotalPrice;
+                stateCopy.CartMoney += stateCopy.Cart[i].ObjTotalPrice;
             }
             console.log(state.Cart);
-            return state;
+            return stateCopy;
+        }
         // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
-        case UP_COUNT:
-            if (state.viewProduct.ObjCountView < state.viewProduct.ObjCount) {
-                state.viewProduct.ObjCountView += 1;
-                state.viewProduct.ObjTotalPrice += state.viewProduct.ObjPrice;
+        case UP_COUNT: {
+            let stateCopy = {...state};
+             stateCopy.viewProduct = {...state.viewProduct};
+            if (stateCopy.viewProduct.ObjCountView < stateCopy.viewProduct.ObjCount) {
+                stateCopy.viewProduct.ObjCountView += 1;
+                stateCopy.viewProduct.ObjTotalPrice += stateCopy.viewProduct.ObjPrice;
             }
-            return state;
-        case DOWN_COUNT:
-            if (state.viewProduct.ObjCountView > 1) {
-                state.viewProduct.ObjCountView -= 1;
-                state.viewProduct.ObjTotalPrice -= state.viewProduct.ObjPrice;
+            return stateCopy;
+        }
+        case DOWN_COUNT: {
+            let stateCopy = {...state};
+            stateCopy.viewProduct = {...state.viewProduct};
+            if (stateCopy.viewProduct.ObjCountView > 1) {
+                stateCopy.viewProduct.ObjCountView -= 1;
+                stateCopy.viewProduct.ObjTotalPrice -= stateCopy.viewProduct.ObjPrice;
             }
-            return state;
+            return stateCopy;
+        }
         /*функции для открытия и закрытя категорий*/
         case OPEN_CATEGORY:
             state.styleBlock.categoryDisplay = 'flex';

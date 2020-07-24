@@ -33,11 +33,9 @@ let openShoppingCartNow=()=>{
                         <path d="M12 20l-7 -7a4 4 0 0 1 6.5 -6a.9 .9 0 0 0 1 0a4 4 0 0 1 6.5 6l-7 7"/>
                     </svg>
                 </button>
+                {/*<CSSTransitionGroup></CSSTransitionGroup>*/}
                 <button onClick={openShoppingCartNow} className={`${style.btnCart} ${style.btn}`}>
-                    <p className={style.price}>{
-                        props.CartMoney
-                    }</p>
-                    <p className={style.currency}>P</p>
+
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart"
                          width="44" height="44" viewBox="0 0 30 30" strokeWidth="1.5" stroke="#2c3e50" fill="none"
                          strokeLinecap="round" strokeLinejoin="round">
@@ -46,6 +44,10 @@ let openShoppingCartNow=()=>{
                         <circle cx="17" cy="19" r="2"/>
                         <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2"/>
                     </svg>
+                    <p className={style.price}>{
+                        props.CartMoney
+                    }</p>
+                    <p className={style.currency}>P</p>
                 </button>
                 <CartContainer store={props.store}/>
                 {/*    заменить картинки для btnFavorite and btnCart*/}

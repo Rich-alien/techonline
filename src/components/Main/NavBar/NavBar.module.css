@@ -36,8 +36,8 @@
 
 .btnCart {
     display: flex;
-
     justify-content: center;
+    width: 150px;
 }
 .price{
     margin: 0 5px 0 0;

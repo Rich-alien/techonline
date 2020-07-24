@@ -1,11 +1,15 @@
 .container{
-    max-width: 316px;
+    display: flex;
+    width: auto;
     height: auto;
-    border-radius: 5px;
+    padding-left: 25px;
     margin-right: 25px;
     margin-top:25px;
+    border-bottom: 2px solid black;
 
 }
-.container:last-child{
-    margin-right: 0;
+
+.Name{
+    font-size: 25px;
+    font-weight: 600;
 }

@@ -1,22 +1,19 @@
 import React from 'react';
 import {closeTitle} from "../../../Redux/mainReducer";
 import TotalItem from "./TotalItem";
+import {connect} from "react-redux";
 
-
-const TotalItemContainer = (props) => {
-    let goBack = ()=>{
-        props.store.dispatch(closeTitle());
-    }
-    let state = props.store.getState().mainPage;
-    return (
-        <TotalItem
-            store={props.store}
-            goBack={goBack}
-            ObjItem={state.ObjItem}
-            styleDisplay={state.styleBlock.totalItem}
-            titleUnderBlock={state.titleUnderBlock.titleTotalItem}
-        />
-    )
+let mapStateToProps = (state) => {
+return{
+    mainPage :state.mainPage
 }
-
+}
+let mapDispatchToProps = (dispatch) => {
+    return{
+        goBack : () => {
+            dispatch(closeTitle());
+        }
+    }
+}
+const TotalItemContainer = connect(mapStateToProps, mapDispatchToProps)(TotalItem)
 export default TotalItemContainer;

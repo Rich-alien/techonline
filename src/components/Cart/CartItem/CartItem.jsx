@@ -7,7 +7,7 @@ const CartItem = (props) =>{
     return(
         <div  className={style.container}>
 
-            <div>
+            <div className={style.Name}>
                 {
                     props.ObjName
                 }

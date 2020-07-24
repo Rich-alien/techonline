@@ -11,10 +11,10 @@ const ItemDescription = (props) => {
     }
     let addOnCart = () => {
         props.addInCartNow();
-
     }
+    let blur = props.blur;
     return (
-        <div className={style.container}>
+        <div style={{filter:blur}} className={style.container }>
             <div className={style.productImgContainer}>
                 <div className={style.productImg}>
                     <img src={img} alt="Item"/>
@@ -22,16 +22,16 @@ const ItemDescription = (props) => {
             </div>
             <div className={style.containerProduct}>
                 <h1 className={style.productName}>
-                    {props.ObjName}
+                    {props.viewProduct.ObjName}
                 </h1>
                 <div className={style.productDirection}>
                     <p className={style.productDirectionText}>
-                        {props.ObjDescription}
+                        {props.viewProduct.ObjDescription}
                     </p>
                 </div>
                 <div className={style.priceBlock}>
                     <div className={style.priceBlock_Price}>
-                        <p className={style.priceBlock_PriceText}>{props.ObjPrice}₽</p>
+                        <p className={style.priceBlock_PriceText}>{props.viewProduct.ObjPrice}₽</p>
                         <p className={style.priceBlock_PriceSubText}>за 1 штуку</p>
                     </div>
                     <div className={style.priceBlock_AddCount}>
@@ -44,7 +44,7 @@ const ItemDescription = (props) => {
                                     <line x1="5" y1="12" x2="19" y2="12"/>
                                 </svg>
                             </div>
-                            <div className={style.countInt}>{props.ObjCountView}</div>
+                            <div className={style.countInt}>{props.viewProduct.ObjCountView}</div>
                             <div onClick={onUpCount} className={style.countPlus}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-plus"
                                      width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50"
@@ -57,7 +57,7 @@ const ItemDescription = (props) => {
                         </div>
                         <div className={style.priceBlock_CountTotal}>
                             <p className={style.priceBlock_PriceSubTextAll}>На сумму</p>
-                            <p className={style.priceBlock_PriceTextAll}>{props.ObjTotalPrice}₽</p>
+                            <p className={style.priceBlock_PriceTextAll}>{props.viewProduct.ObjTotalPrice}₽</p>
                         </div>
                     </div>
                     <div className={style.addToCardBlock}>
