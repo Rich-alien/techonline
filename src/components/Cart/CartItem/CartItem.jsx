@@ -22,6 +22,15 @@ const CartItem = (props) =>{
                     props.ObjTotalPrice
                 }
             </div>
+            <button className={style.btnDelete}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-circle-x" width="32"
+                     height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50" fill="none"
+                     strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M10 10l4 4m0 -4l-4 4"/>
+                </svg>
+            </button>
         </div>
 
 
