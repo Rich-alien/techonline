@@ -1,0 +1,31 @@
+.container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialLink {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header {
+    height: auto;
+    color: #FFFFFF;
+    font-size: 35px;
+    margin: 0;
+}
+
+.svg {
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: #A5A6AB;
+}
