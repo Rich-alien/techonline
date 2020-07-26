@@ -1,23 +1,19 @@
 import React from "react";
 import style from "./Footer.module.css"
+import FooterAboutUs from "./FooterAboutUs/FooterAboutUs";
+import FooterInstagram from "./FooterInstagram/FooterInstagram";
+import FooterContactUs from "./FooterContactUs/FooterContactUs";
+import FooterInformation from "./FooterInformation/FooterInformation";
+
 
 const Footer = () => {
     return (
         <footer className={style.container}>
             <div className={style.topFooter}>
-                <div className={style.aboutUs}>
-
-                </div>
-                <div className={style.information}>
-
-                </div>
-                <div className={style.instagram}>
-
-                </div>
-                <div className={style.contactUs}>
-
-                </div>
-
+                <FooterAboutUs/>
+                <FooterInformation/>
+                <FooterInstagram/>
+                <FooterContactUs/>
             </div>
             <div className={style.social}>
                 <div className={style.socialLink}>
