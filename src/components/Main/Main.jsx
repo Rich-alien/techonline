@@ -8,6 +8,7 @@ import style from './Main.module.css'
 // import ItemDescription from "../ItemDescription/ItemDescription";
 import ItemDescriptionContainer from "../ItemDescription/ItemDescriptionContainer";
 import NavBarContainer from "./NavBar/NavBarContainer";
+import Footer from "../Footer/Footer";
 
 
 const Main = (props) => {
@@ -20,6 +21,7 @@ const Main = (props) => {
             {/*<ChooseCategoryContainer store={props.store}/>*/}
             {/*<SubChooseCategoryContainer store={props.store}/>*/}
             {/*<TotalItemContainer store={props.store}/>*/}
+            <Footer/>
         </div>
     )
 }
