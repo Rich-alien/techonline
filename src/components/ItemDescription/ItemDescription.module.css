@@ -30,7 +30,7 @@
 }
 
 .containerProduct {
-    height: 100%;
+    height: auto;
     margin-top: 48px;
     margin-left: 43px;
     width: 488px;
@@ -48,6 +48,7 @@
 }
 
 .productDirection {
+    margin-bottom: 100px;
     margin-left: 40px;
     max-width: 338px;
 }
@@ -183,7 +184,8 @@
 
 .addToCardBlock {
     margin-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 37px;
+
 }
 .btn {
     outline: none;
