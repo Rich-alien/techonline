@@ -2,14 +2,23 @@
     display: flex;
     width: auto;
     height: auto;
-    padding-left: 25px;
+    background-color: #fff;
+    margin-left: 25px;
     margin-right: 25px;
     margin-top:25px;
-    border-bottom: 2px solid black;
+    border-radius: 15px;
 
 }
 
 .Name{
     font-size: 25px;
     font-weight: 600;
+}
+.btnDelete{
+    border-radius: 0 15px 15px 0;
+    width: 100%;
+    background-color: red;
+    outline: none;
+    border:none;
+    height: auto;
 }
