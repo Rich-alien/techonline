@@ -1,0 +1,19 @@
+.instagram {
+    width: 330px;
+}
+.header {
+    text-align: start;
+    color: #FFFFFF;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.img {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+}
+.instagramGrid {
+    display: flex;
+    flex-wrap: wrap;
+}

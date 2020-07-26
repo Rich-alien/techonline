@@ -1,0 +1,29 @@
+.header {
+    color: #FFFFFF;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.contactUsAddress {
+    display: flex;
+    align-items: center;
+    color: #A5A6AB;
+    margin-bottom: 30px;
+
+}
+.contactUsSvg{
+    margin-right: 5px;
+}
+.contactUsPhone{
+    display: flex;
+    align-items: center;
+    color: #A5A6AB;
+    margin-bottom: 30px;
+}
+.link{
+    text-decoration: none;
+    color: #A5A6AB;
+}
+.contactUsSvg{
+    width: 24px;
+    height: 24px;
+}

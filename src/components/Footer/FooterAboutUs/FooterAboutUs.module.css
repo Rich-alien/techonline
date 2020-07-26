@@ -1,0 +1,17 @@
+.header {
+    color: #FFFFFF;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.aboutUs {
+    text-align: left;
+    max-width: 300px;
+}
+
+.aboutUsText {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A5A6AB;
+}
