@@ -4,6 +4,7 @@ import FooterAboutUs from "./FooterAboutUs/FooterAboutUs";
 import FooterInstagram from "./FooterInstagram/FooterInstagram";
 import FooterContactUs from "./FooterContactUs/FooterContactUs";
 import FooterInformation from "./FooterInformation/FooterInformation";
+import FooterSocialLinkWithPayment from "./FooterSocialLink/FooterSocialLinkWithPayment";
 
 
 const Footer = () => {
@@ -15,13 +16,8 @@ const Footer = () => {
                 <FooterInstagram/>
                 <FooterContactUs/>
             </div>
-            <div className={style.social}>
-                <div className={style.socialLink}>
-
-                </div>
-                <div className={style.payment}>
-
-                </div>
+            <div className={style.bottomFooter}>
+                <FooterSocialLinkWithPayment/>
             </div>
             <div className={style.copyright}>
 
