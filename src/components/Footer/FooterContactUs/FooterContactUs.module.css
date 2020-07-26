@@ -11,6 +11,8 @@
 
 }
 .contactUsSvg{
+    width: 24px;
+    height: 24px;
     margin-right: 5px;
 }
 .contactUsPhone{
@@ -22,8 +24,4 @@
 .link{
     text-decoration: none;
     color: #A5A6AB;
-}
-.contactUsSvg{
-    width: 24px;
-    height: 24px;
 }
