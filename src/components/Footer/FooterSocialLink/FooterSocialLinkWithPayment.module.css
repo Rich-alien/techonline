@@ -4,9 +4,10 @@
     justify-content: space-between;
 }
 
-.socialLink {
-    height: auto;
+.social {
     display: flex;
+    height: auto;
+
     flex-direction: row;
     align-items: center;
 }
