@@ -9,21 +9,16 @@ import ProductView from "../ProductView/ProductView";
 
 
 const Main = (props) => {
-    // debugger;
     return (
-      <BrowserRouter>
-          <div className={style.main}>
-              <NavBarContainer store={props.store}/>
-              <Route path='/product' render={()=> <ItemDescriptionContainer store={props.store}/> }/>
-              <Route path='/productView' render={()=> <ProductView store={props.store}/> }/>
-              <Route path='/search' render={()=> <SearchPage/> } />
-
-              <Footer/>
-          </div>
-      </BrowserRouter>)
+        <BrowserRouter>
+            <div className={style.main}>
+                <NavBarContainer store={props.store}/>
+                <Route path='/product' render={() => <ItemDescriptionContainer store={props.store}/>}/>
+                <Route path='/productView' render={() => <ProductView store={props.store}/>}/>
+                <Route path='/search' render={() => <SearchPage store={props.store}/>}/>
+                <Footer/>
+            </div>
+        </BrowserRouter>
+    )
 }
-/*<ChooseCarContainer store={props.store}/>*/
-/*<ChooseCategoryContainer store={props.store}/>*/
-/*<SubChooseCategoryContainer store={props.store}/>*/
-/*<TotalItemContainer store={props.store}/>*/
 export default Main;
