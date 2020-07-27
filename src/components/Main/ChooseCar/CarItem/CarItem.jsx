@@ -3,7 +3,7 @@ import style from './CarItem.module.css'
 import carImg from '../../../../img/ladaVesta2.png'
 
 const CarItem = (props) => {
-    let onOpenCategoryNow=() =>{
+    let onOpenCategoryNow = () => {
         props.openCategoryNow();
     }
     return (
@@ -11,7 +11,6 @@ const CarItem = (props) => {
 
             <div className={style.CarImg}>
                 <img className={style.imgCar} src={carImg} alt="love"/>
-
             </div>
             <div className={style.CarName}>
                 <h1 className={style.CarNameH}>{props.CarName}</h1>
