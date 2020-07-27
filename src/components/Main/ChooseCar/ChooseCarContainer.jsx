@@ -1,16 +1,16 @@
 import React from 'react';
+import {connect} from "react-redux";
 import ChooseCar from "./ChooseCar";
 
-const ChooseCarContainer = (props) => {
-    let state = props.store.getState().mainPage;
-    return (
-        <ChooseCar
-            store={props.store}
-            data={state.data}
-            styleDisplay={state.styleBlock.chooseCar}
-            titleUnderBlock={state.titleUnderBlock.titleChooseCar}
-        />
-    )
+
+let mapStateToProps = (state) => {
+    return{
+        data:state.mainPage.data,
+        styleDisplay:state.mainPage.styleBlock.chooseCar,
+        titleUnderBlock:state.mainPage.titleUnderBlock.titleChooseCar,
+    }
 }
+
+const ChooseCarContainer =  connect(mapStateToProps)(ChooseCar);
 
 export default ChooseCarContainer;
