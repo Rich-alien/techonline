@@ -51,7 +51,7 @@ let openShoppingCartNow=()=>{
                   {/*</button>*/}
                   <NavLink className={style.linkLogo} to='/productView' >
                       <div className={style.logo}>
-                          Один Товар
+                          ITEM
                       </div>
                   </NavLink>
                   {/*<CSSTransitionGroup></CSSTransitionGroup>*/}
