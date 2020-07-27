@@ -9,12 +9,12 @@ const FooterInstagram = () => {
                 Инстаграм
             </div>
                     <div className={style.instagramGrid}>
-                        <img src={require(".././imgFooter/1.jpg")} alt="img" className={style.img}/>
-                        <img src={require(".././imgFooter/2.jpg")} alt="img" className={style.img}/>
-                        <img src={require(".././imgFooter/3.jpg")} alt="img" className={style.img}/>
-                        <img src={require(".././imgFooter/4.jpg")} alt="img" className={style.img}/>
-                        <img src={require(".././imgFooter/5.jpg")} alt="img" className={style.img}/>
-                        <img src={require(".././imgFooter/6.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/1.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/2.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/3.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/4.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/5.jpg")} alt="img" className={style.img}/>
+                        <img src={require("../ImgFooter/6.jpg")} alt="img" className={style.img}/>
                     </div>
         </div>
 
