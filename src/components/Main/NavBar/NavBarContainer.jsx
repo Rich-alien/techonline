@@ -16,10 +16,4 @@ const NavBarContainer = (props) => {
        />
     )
 }
-//<img src="https://img.icons8.com/officel/40/000000/mine-cart.png"/>
-//<img src="https://img.icons8.com/color/48/000000/filled-like.png"/>
-//<img src="https://img.icons8.com/android/24/000000/search.png"/> ICON SEARCH ADD LATER
-//<img src="https://img.icons8.com/material-rounded/24/000000/shopping-basket-2.png"/> ICON BASKET ADD LATER
-//<img src="https://img.icons8.com/metro/26/000000/filled-like.png"/> ICON FAVORITE ADD LATER
-//<img src="https://img.icons8.com/material-outlined/26/000000/filled-like.png"/> ICON FAVORITE(EMPTY) ADD LATER
 export default NavBarContainer;
