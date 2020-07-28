@@ -19,18 +19,30 @@
 .underBlock{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+}
+.normal{
+    display: flex;
+    align-items: center;
 }
 .categoryContainer{
     display: flex;
     flex-wrap: wrap;
-
     justify-content: center;
     height: auto;
-    margin: 10px;
-    padding: 20px;
+    margin-top: 10px;
+    /*padding: 20px;*/
 }
-
 .text{
-
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    padding-top: 40px;
+}
+.carText{
+    font-weight: 700;
+    font-size: 24px;
 }

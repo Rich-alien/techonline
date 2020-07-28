@@ -10,6 +10,10 @@
     height: 50px;
     cursor: pointer;
 }
+.normal{
+    display: flex;
+    align-items: center;
+}
 .categoryContainer{
     display: flex;
     flex-wrap: wrap;
@@ -19,11 +23,21 @@
     margin: 10px;
     padding: 20px;
 }
+.carText{
+    font-weight: 700;
+    font-size: 24px;
+}
 .underBlock{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .text{
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    padding-top: 40px;
 }
