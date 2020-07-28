@@ -1,22 +1,25 @@
 import React from 'react';
-import {closeCategory} from "../../../Redux/mainReducer";
+import {closeCategory, openSubCategory} from "../../../Redux/mainReducer";
 import ChooseCategory from "./ChooseCategoty";
+import {connect} from "react-redux";
 
-const ChooseCategoryContainer = (props) => {
-
-    let goBack = () => {
-        props.store.dispatch(closeCategory())
+let mapStateToProps = (state) => {
+    return {
+        category: state.mainPage.category,
+        styleDisplay: state.mainPage.styleBlock.categoryDisplay,
+        titleUnderBlock: state.mainPage.titleUnderBlock.titleChooseCategory,
     }
-    let state = props.store.getState().mainPage;
-    return (
-        <ChooseCategory
-            store={props.store}
-            goBack={goBack}
-            category={state.category}
-            styleDisplay={state.styleBlock.categoryDisplay}
-            titleUnderBlock={state.titleUnderBlock.titleChooseCategory}
-        />
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        goBack: () => {
+            dispatch(closeCategory());
+        },
+        openSubCategoryNow: () => {
+            dispatch(openSubCategory());
+        }
+    }
+}
+const ChooseCategoryContainer = connect(mapStateToProps, mapDispatchToProps)(ChooseCategory);
 
 export default ChooseCategoryContainer;
