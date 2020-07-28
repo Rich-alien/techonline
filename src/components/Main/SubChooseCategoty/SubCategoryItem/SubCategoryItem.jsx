@@ -3,7 +3,7 @@ import style from './SubCategoryItem.module.css'
 
 const SubCategoryItem = (props) => {
     let openTitleNow = () => {
-        props.openTitleNow();
+        props.openTotalItem();
     }
     return (
         <div onClick={openTitleNow} className={style.container}>
