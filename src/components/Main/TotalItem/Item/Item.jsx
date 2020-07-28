@@ -21,8 +21,9 @@ const Item = (props) => {
                 }
             </div>
             {/*<button className={style.btn}>*/}
-            {/*    OPEN*/}
+            {/*    <p className={style.btnText}>Подробнее</p>*/}
             {/*</button>*/}
+            {/*    нужна или нет, вот в чем вопрос*/}
         </div>
     )
 }
