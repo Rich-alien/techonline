@@ -190,25 +190,21 @@ let mainPageData = {
 const mainReducer = (state = mainPageData, action) => {
     // debugger;
     switch (action.type) {
-        // сумма в корзине
-        // case SHOW_CART_ALL_MONEY:
-        //     for (let i=0;i<state.CartItem.length;i++){
-        //         this.state.CartMonet += this.state.CartItem[i].ObjTotalPrice;
-        //     }
-        //     return state;
         //открытие и закрытие корзины;
         case OPEN_SHOPPING_CART: {
             let stateCopy = {...state}
             stateCopy.styleBlock.shoppingCart = 'flex';
             stateCopy.styleBlock.blur = 'blur(3px)';
 
-            return stateCopy;}
+            return stateCopy;
+        }
         case CLOSE_SHOPPING_CART: {
             let stateCopy = {...state}
             stateCopy.styleBlock.shoppingCart = 'none';
             stateCopy.styleBlock.blur = 'none';
 
-            return stateCopy;}
+            return stateCopy;
+        }
         //Добавление товара в массив CartItem
         //Доработать!
         case ADD_IN_CART: {
@@ -235,7 +231,7 @@ const mainReducer = (state = mainPageData, action) => {
         // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
         case UP_COUNT: {
             let stateCopy = {...state};
-             stateCopy.viewProduct = {...state.viewProduct};
+            stateCopy.viewProduct = {...state.viewProduct};
             if (stateCopy.viewProduct.ObjCountView < stateCopy.viewProduct.ObjCount) {
                 stateCopy.viewProduct.ObjCountView += 1;
                 stateCopy.viewProduct.ObjTotalPrice += stateCopy.viewProduct.ObjPrice;
@@ -252,36 +248,68 @@ const mainReducer = (state = mainPageData, action) => {
             return stateCopy;
         }
         /*функции для открытия и закрытя категорий*/
-        case OPEN_CATEGORY:
-            state.styleBlock.categoryDisplay = 'flex';
-            state.styleBlock.chooseCar = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCategory;
-            return state;
-        case OPEN_SUB_CATEGORY:
-            state.styleBlock.subCategoryDisplay = 'flex';
-            state.styleBlock.categoryDisplay = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseSubCategory;
-            return state;
-        case OPEN_TITLE:
-            state.styleBlock.totalItem = 'block';
-            state.styleBlock.subCategoryDisplay = 'none';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleTotalItem;
-            return state;
-        case CLOSE_TITLE:
-            state.styleBlock.totalItem = 'none';
-            state.styleBlock.subCategoryDisplay = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseSubCategory;
-            return state;
-        case CLOSE_SUB_CATEGORY:
-            state.styleBlock.subCategoryDisplay = 'none';
-            state.styleBlock.categoryDisplay = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCategory;
-            return state;
-        case CLOSE_CATEGORY:
-            state.styleBlock.categoryDisplay = 'none';
-            state.styleBlock.chooseCar = 'flex';
-            state.nowTitleUnderBlock = state.titleUnderBlock.titleChooseCar;
-            return state;
+        case OPEN_CATEGORY: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+            stateCopy.styleBlock.categoryDisplay = 'flex';
+            stateCopy.styleBlock.chooseCar = 'none';
+            stateCopy.styleBlock.totalItem = 'none';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
+            return stateCopy;
+        }
+        case OPEN_SUB_CATEGORY: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+            stateCopy.styleBlock.subCategoryDisplay = 'flex';
+            stateCopy.styleBlock.categoryDisplay = 'none';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
+            return stateCopy;
+        }
+        case OPEN_TITLE: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+            stateCopy.styleBlock.totalItem = 'block';
+            stateCopy.styleBlock.subCategoryDisplay = 'none';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleTotalItem;
+            return stateCopy;
+        }
+        case CLOSE_TITLE: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+            stateCopy.styleBlock.totalItem = 'none';
+            stateCopy.styleBlock.subCategoryDisplay = 'flex';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
+            return stateCopy;
+        }
+        case CLOSE_SUB_CATEGORY: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+
+            stateCopy.styleBlock.subCategoryDisplay = 'none';
+            stateCopy.styleBlock.categoryDisplay = 'flex';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
+            return stateCopy;
+        }
+        case CLOSE_CATEGORY: {
+            let stateCopy = {...state};
+            stateCopy.styleBlock = {...state.styleBlock};
+            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
+            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
+            stateCopy.styleBlock.categoryDisplay = 'none';
+            stateCopy.styleBlock.chooseCar = 'flex';
+            stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCar;
+            return stateCopy;
+        }
         /*! функции для открытия и закрытя категорий*/
 
         default:
