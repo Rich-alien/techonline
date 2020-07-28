@@ -4,7 +4,7 @@ import style from './CategoryItem.module.css'
 
 const CategoryItem = (props) => {
     let onOpenSubCategoryNow=()=>{
-        props.openSubCategoryNow();
+        props.openSubCategory();
     }
     return (
         <button onClick={onOpenSubCategoryNow} className={style.container}>
