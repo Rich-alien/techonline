@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './SubChooseCategory.module.css'
 import closeBtnSvg from "../../../close.svg";
-import SubCategoryItemContainer from "./SubCategoryItem/SubCategoryItemContiner";
+import SubCategoryItem from "./SubCategoryItem/SubCategoryItem";
 
 
 const SubChooseCategory = (props) => {
-    let item = props.SubCategory.map(e => <SubCategoryItemContainer
-        store={props.store}
+    let item = props.SubCategory.map(e => <SubCategoryItem
+        openTotalItem={props.openTotalItemNow}
         key={e.id}
         SubCategoryName={e.SubCategoryName}
         dispatch={props.dispatch}

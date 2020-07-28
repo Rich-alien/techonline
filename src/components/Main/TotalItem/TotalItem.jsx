@@ -11,7 +11,7 @@ const TotalItem = (props) => {
         ObjImg={e.ObjImg}
         ObjPrice={e.ObjPrice}/>)
     let styleDisplay=props.styleDisplay;
-    let goBack = ()=>{
+    let goBackNow = ()=>{
         props.goBack();
     }
     return (
@@ -24,7 +24,7 @@ const TotalItem = (props) => {
                         а....я
                     </button>
                     <div>
-                        <div className={style.btn} onClick={goBack}>
+                        <div className={style.btn} onClick={goBackNow}>
                             Вернуться назад
                         </div>
                     </div>
