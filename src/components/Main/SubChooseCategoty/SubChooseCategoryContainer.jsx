@@ -1,22 +1,27 @@
 import React from 'react';
-import {closeSubCategory} from "../../../Redux/mainReducer";
+import { closeSubCategory,  openTitle} from "../../../Redux/mainReducer";
 import SubChooseCategory from "./SubChooseCategory";
+import {connect} from "react-redux";
 
 
-const SubChooseCategoryContainer = (props) => {
-    let goBack = () => {
-        props.store.dispatch(closeSubCategory())
+let mapStateToProps = (state) => {
+    return{
+        SubCategory:state.mainPage.SubCategory,
+        styleDisplay:state.mainPage.styleBlock.subCategoryDisplay,
+        titleUnderBlock:state.mainPage.titleUnderBlock.titleChooseSubCategory
+
     }
-    let state = props.store.getState().mainPage;
-    return (
-        <SubChooseCategory
-            store={props.store}
-            goBack={goBack}
-            SubCategory={state.SubCategory}
-            styleDisplay={state.styleBlock.subCategoryDisplay}
-            titleUnderBlock={state.titleUnderBlock.titleChooseSubCategory}
-        />
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return{
+      goBack:()=>{
+          dispatch(closeSubCategory())
+      },
+      openTotalItemNow:()=>{
+          dispatch(openTitle())
+      }
+    }
+}
+const SubChooseCategoryContainer =  connect(mapStateToProps,mapDispatchToProps)(SubChooseCategory);
 
 export default SubChooseCategoryContainer;

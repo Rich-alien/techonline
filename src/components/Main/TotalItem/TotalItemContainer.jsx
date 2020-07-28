@@ -4,13 +4,14 @@ import TotalItem from "./TotalItem";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
-return{
-    mainPage :state.mainPage
-}
+    return {
+        ObjItem: state.mainPage.ObjItem,
+        styleDisplay:state.mainPage.styleBlock.totalItem,
+    }
 }
 let mapDispatchToProps = (dispatch) => {
-    return{
-        goBack : () => {
+    return {
+        goBack: () => {
             dispatch(closeTitle());
         }
     }
