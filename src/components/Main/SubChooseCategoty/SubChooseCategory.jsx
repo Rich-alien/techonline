@@ -11,12 +11,12 @@ const SubChooseCategory = (props) => {
         SubCategoryName={e.SubCategoryName}
         dispatch={props.dispatch}
     />)
-    let styleDisplay = props.styleDisplay;
+    let styleDisplaySub = props.styleDisplay;
     let goBack = () => {
         props.goBack();
     }
     return (
-        <div style={{display: styleDisplay}} className={style.container}>
+        <div style={{display: styleDisplaySub}} className={style.container}>
             <div className={style.underBlock}>
                 <div className={style.text}>
                     <div className={style.normal}>
