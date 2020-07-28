@@ -1,16 +1,16 @@
 import React from 'react';
 import style from './ChooseCategory.module.css'
 import closeBtnSvg from "../../.././close.svg"
-import CategoryItemContainer from "./CategoryItem/CategoryItemContainer";
+import CategoryItem from "./CategoryItem/CategoryItem";
 
 const ChooseCategory = (props) => {
-    let item = props.category.map(e=><CategoryItemContainer
-        store={props.store}
+    let item = props.category.map(e => <CategoryItem
+        openSubCategory={props.openSubCategoryNow}
         key={e.id}
         Category={e.Category}
     />);
     let styleDisplay = props.styleDisplay;
-    let goBack=()=>{
+    let goBack = () => {
         props.goBack();
     }
     return (
@@ -23,10 +23,10 @@ const ChooseCategory = (props) => {
                     }
                 </div>
 
-                    <img onClick={goBack} className={style.btn_svg} src={closeBtnSvg} alt="btn-back"/>
+                <img onClick={goBack} className={style.btn_svg} src={closeBtnSvg} alt="btn-back"/>
 
             </div>
-            <div  className={style.categoryContainer}>
+            <div className={style.categoryContainer}>
                 {
                     item
                 }
