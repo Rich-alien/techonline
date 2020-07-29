@@ -9,6 +9,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     OPEN_SHOPPING_CART = 'OPEN-SHOPPING-CART',
     CLOSE_SHOPPING_CART = 'ClOSE-SHOPPING-CART',
     SHOW_CART_ALL_MONEY = 'SHOW-CART-ALL-MONEY',
+    SORT_DOWN = 'SORT-DOWN',
     DOWN_COUNT = 'DOWN-COUNT';
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
@@ -195,6 +196,14 @@ const mainReducer = (state = mainPageData, action) => {
             let stateCopy = {...state}
             stateCopy.styleBlock.shoppingCart = 'flex';
             stateCopy.styleBlock.blur = 'blur(3px)';
+
+            return stateCopy;
+        }
+        case SORT_DOWN(action.type): {
+            let stateCopy = {...state}
+            stateCopy.ObjItem = {...state}
+            //сортировка по уменьшению
+
 
             return stateCopy;
         }
