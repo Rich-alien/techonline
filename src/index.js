@@ -4,20 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from "./Redux/storeRedux";
+import {Provider} from "react-redux";
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
-            <App
-                store = {store}
-                dispatch={store.dispatch.bind(store)}
-            />
+            <Provider store={store}>
+                <App/>
+            </Provider>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
 rerenderEntireTree(store.getState());
-store.subscribe(()=>{
+store.subscribe(() => {
     let state = store.getState()
     rerenderEntireTree(state);
 });
