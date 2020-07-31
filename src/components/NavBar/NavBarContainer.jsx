@@ -1,19 +1,20 @@
-import React from "react";
 import NavBar from "./NavBar";
 import {openShoppingCart} from "../../Redux/mainReducer";
+import {connect} from "react-redux";
 
-const NavBarContainer = (props) => {
-    let state = props.store.getState().mainPage;
-    let openShoppingCartNow =()=>{
-        props.store.dispatch(openShoppingCart())
+
+let mapStateToProps = (state) => {
+    return {
+        store: state,
+        CartMoney: state.mainPage.CartMoney
     }
-    return (
-
-       <NavBar
-           openShoppingCartNow={openShoppingCartNow}
-           store={props.store}
-           CartMoney={state.CartMoney}
-       />
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        openShoppingCartNow: () => {
+            dispatch(openShoppingCart());
+        },
+    }
+}
+const NavBarContainer = connect(mapStateToProps,mapDispatchToProps)(NavBar)
 export default NavBarContainer;

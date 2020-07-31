@@ -1,20 +1,22 @@
-import React from "react";
 import Cart from "./Cart";
 import {closeShoppingCart} from "../../Redux/mainReducer";
+import {connect} from "react-redux";
 
-const CartContainer = (props) => {
-    let closeShoppingCartNow = () => {
-        props.store.dispatch(closeShoppingCart());
-    };
-    let state = props.store.getState().mainPage;
-    return (
-        <Cart
-            Cart={state.Cart}
-            store={props.store}
-            styleDisplay={state.styleBlock.shoppingCart}
-            closeShoppingCartNow={closeShoppingCartNow}
-        />
 
-    )
+let mapStateToProps = (state) => {
+    return {
+        Cart: state.mainPage.Cart,
+        styleDisplay: state.mainPage.styleBlock.shoppingCart,
+
+
+    }
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        closeShoppingCartNow: () => {
+            dispatch(closeShoppingCart());
+        },
+    }
+}
+const CartContainer = connect(mapStateToProps, mapDispatchToProps)(Cart);
 export default CartContainer
