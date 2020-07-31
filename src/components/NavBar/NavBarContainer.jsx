@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
-import {openShoppingCart} from "../../../Redux/mainReducer";
+import {openShoppingCart} from "../../Redux/mainReducer";
 
 const NavBarContainer = (props) => {
     let state = props.store.getState().mainPage;

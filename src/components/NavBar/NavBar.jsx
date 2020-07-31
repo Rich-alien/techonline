@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./NavBar.module.css"
-import CartContainer from "../../Cart/CartContainer";
+import CartContainer from "../Cart/CartContainer";
 import {NavLink} from "react-router-dom";
 
 const NavBar = (props) => {

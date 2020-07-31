@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './Main.module.css'
 import ItemDescriptionContainer from "../ItemDescription/ItemDescriptionContainer";
-import NavBarContainer from "./NavBar/NavBarContainer";
 import Footer from "../Footer/Footer";
 import SearchPage from "../SearchPage/SearchPage";
 import {BrowserRouter, Route} from "react-router-dom";
 import ProductView from "../ProductView/ProductView";
+import NavBarContainer from "../NavBar/NavBarContainer";
 
 
 const Main = (props) => {
