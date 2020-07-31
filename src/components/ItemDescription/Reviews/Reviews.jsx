@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Reviews.module.css"
 import Review from "./Review/Review";
-import {addReview, updateNewReviewsText} from "../../../Redux/state";
+// import {addReview, updateNewReviewsText} from "../../../Redux/state";
 
 const Reviews = (props) => {
     let newReviewsElement = React.createRef();
