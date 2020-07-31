@@ -24,6 +24,7 @@ export let addInCart = () => ({type: ADD_IN_CART});
 export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
 export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
+export let sortDown = () => ({type: SORT_DOWN});
 
 
 let mainPageData = {
@@ -199,7 +200,7 @@ const mainReducer = (state = mainPageData, action) => {
 
             return stateCopy;
         }
-        case SORT_DOWN(action.type): {
+        case SORT_DOWN: {
             let stateCopy = {...state}
             stateCopy.ObjItem = {...state}
             //сортировка по уменьшению
