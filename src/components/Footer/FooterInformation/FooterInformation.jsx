@@ -1,13 +1,15 @@
 import React from "react";
 import style from "./FooterInformation.module.css"
-
-const FooterInformation = ()=>{
-    return(
-        <div className={style.information}>
-            <div className={style.header}>
-                Информация о нас
+class FooterInformation extends React.Component{
+    render() {
+        return(
+            <div className={style.information}>
+                <div className={style.header}>
+                    Информация о нас
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
+
 export default FooterInformation

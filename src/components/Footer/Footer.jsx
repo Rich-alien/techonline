@@ -6,23 +6,25 @@ import FooterContactUs from "./FooterContactUs/FooterContactUs";
 import FooterInformation from "./FooterInformation/FooterInformation";
 import FooterSocialLinkWithPayment from "./FooterSocialLink/FooterSocialLinkWithPayment";
 
+class Footer extends React.Component{
+    render() {
+        return (
+            <footer className={style.container}>
+                <div className={style.topFooter}>
+                    <FooterAboutUs/>
+                    <FooterInformation/>
+                    <FooterInstagram/>
+                    <FooterContactUs/>
+                </div>
+                <div className={style.bottomFooter}>
+                    <FooterSocialLinkWithPayment/>
+                </div>
+                <div className={style.copyright}>
 
-const Footer = () => {
-    return (
-        <footer className={style.container}>
-            <div className={style.topFooter}>
-                <FooterAboutUs/>
-                <FooterInformation/>
-                <FooterInstagram/>
-                <FooterContactUs/>
-            </div>
-            <div className={style.bottomFooter}>
-                <FooterSocialLinkWithPayment/>
-            </div>
-            <div className={style.copyright}>
-
-            </div>
-        </footer>
-    )
+                </div>
+            </footer>
+        )
+    }
 }
+
 export default Footer;
