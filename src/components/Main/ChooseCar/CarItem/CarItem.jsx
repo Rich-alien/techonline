@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './CarItem.module.css'
-import carImg from '../../../../img/ladaVesta2.png'
+import carImg from '../../../../assets/images/ladaVesta2.png'
 
 const CarItem = (props) => {
     let onOpenCategory = () => {
