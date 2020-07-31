@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./ItemDescription.module.css"
-import img from "../../img/iLoveIt.png"
 
 class ItemDescription extends React.Component{
     onUpCount = () => {
@@ -19,7 +18,7 @@ class ItemDescription extends React.Component{
         <div style={{filter:this.blurN}} className={style.container }>
             <div className={style.productImgContainer}>
                 <div className={style.productImg}>
-                    <img src={img} alt="Item"/>
+                    <img src={require("../../assets/images/productImg.png")} alt="Item"/>
                 </div>
             </div>
             <div className={style.containerProduct}>
@@ -39,22 +38,11 @@ class ItemDescription extends React.Component{
                     <div className={style.priceBlock_AddCount}>
                         <div className={style.countContainer}>
                             <div onClick={this.onDownCount} className={style.countMinus}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-minus"
-                                     width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50"
-                                     fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z"/>
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                </svg>
+                                <img src={require("../../assets/svg-icon/minus.svg")} alt=""/>
                             </div>
                             <div className={style.countInt}>{this.props.viewProduct.ObjCountView}</div>
                             <div onClick={this.onUpCount} className={style.countPlus}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-plus"
-                                     width="20" height="20" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#2c3e50"
-                                     fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z"/>
-                                    <line x1="12" y1="5" x2="12" y2="19"/>
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                </svg>
+                                <img src={require("../../assets/svg-icon/plus.svg")} alt=""/>
                             </div>
                         </div>
                         <div className={style.priceBlock_CountTotal}>
