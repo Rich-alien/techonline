@@ -1,4 +1,3 @@
-import React from 'react';
 import {closeCategory, openSubCategory} from "../../../Redux/mainReducer";
 import ChooseCategory from "./ChooseCategoty";
 import {connect} from "react-redux";

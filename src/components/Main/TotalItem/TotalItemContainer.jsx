@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {closeTitle} from "../../../Redux/mainReducer";
 import TotalItem from "./TotalItem";
 import {connect} from "react-redux";
