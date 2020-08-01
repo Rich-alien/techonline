@@ -366,6 +366,43 @@
       "name": "Lada",
       "image": "url"
     }
+  ],
+  "Category": [
+    {
+      "id": 0,
+      "name": "category"
+    },
+    {
+      "id": 1,
+      "name": "category"
+    },
+    {
+      "id": 2,
+      "name": "category"
+    },
+    {
+      "id": 3,
+      "name": "category"
+    }
+  ],
+  "Subcategory": [
+    {
+      "id": 0,
+      "name": "subcategory"
+    },
+    {
+      "id": 1,
+      "name": "subcategory"
+    },
+    {
+      "id": 2,
+      "name": "subcategory"
+    },
+    {
+      "id": 3,
+      "name": "subcategory"
+    }
   ]
 }
+
 
