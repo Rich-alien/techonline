@@ -1,30 +1,42 @@
 import React from "react";
 import style from "./Item.module.css"
+import * as axios from "axios";
 
-const Item = (props) => {
-    return (
-        <div className={style.container}>
 
-            <div className={style.ObjImg}>
+class Item extends React.Component {
+    componentDidMount() {
+        axios.get("http://localhost:3000/ObjItem").then(response => {
+            this.props.setItems(response.data)
+        });
+    }
+
+    render() {
+        return (
+            <div className={style.container}>
                 {
-                    props.ObjImg
+                    this.props.products.map(u => <div key={u.id}>
+                            <div className={style.ObjImg}>
+                                {
+                                    u.ObjImg
+                                }
+                            </div>
+                            <div className={style.ObjName}>
+                                {
+                                    u.ObjName
+                                }
+                            </div>
+                            <div className={style.ObjPrice}>
+                                {
+                                    u.ObjPrice
+                                }
+                            </div>
+                        </div>
+                    )
                 }
             </div>
-            <div className={style.ObjName}>
-                {
-                    props.ObjName
-                }
-            </div>
-            <div className={style.ObjPrice}>
-                {
-                    props.ObjPrice
-                }
-            </div>
-            {/*<button className={style.btn}>*/}
-            {/*    <p className={style.btnText}>Подробнее</p>*/}
-            {/*</button>*/}
-            {/*    нужна или нет, вот в чем вопрос*/}
-        </div>
-    )
+        )
+    }
+
 }
+
 export default Item
