@@ -23,13 +23,22 @@
 .btn {
     outline:none;
     display: flex;
-    margin: 0 0 0 10px;
+    width: 52px;
+    border-radius: 1px;
+    /*margin: 0 0 0 10px;*/
+    height: 40px;
+    align-items: center;
+    justify-content: center;
     padding: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-
+.btn:hover{
+    border-radius: 10px;
+    /*background-color: transparent;*/
+    background-color:rgba(0,0,0,0.1) !important;
+}
 
 
 .linkLogo{
