@@ -18,7 +18,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
 export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
-export let openTitle = () => ({type: OPEN_TITLE});
+export let openTitleAC = () => ({type: OPEN_TITLE});
 export let closeTitle = () => ({type: CLOSE_TITLE});
 export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
 export let closeCategory = () => ({type: CLOSE_CATEGORY});
