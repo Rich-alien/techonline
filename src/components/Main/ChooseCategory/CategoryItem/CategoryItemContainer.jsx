@@ -1,20 +1,22 @@
-import React from 'react';
-import {openSubCategory} from "../../../../Redux/mainReducer";
+import {openSubCategory, setCategoryAC} from "../../../../Redux/mainReducer";
 import CategoryItem from "./CategoryItem";
+import {connect} from "react-redux";
 
-
-const CategoryItemContainer = (props) => {
-
-    let openSubCategoryNow = () => {
-        props.store.dispatch(openSubCategory())
+let mapStateToProps = (state) => {
+    return {
+        products: state.mainPage.Category,
     }
-
-    return (
-        <CategoryItem
-            openSubCategoryNow={openSubCategoryNow}
-            Category={props.Category}
-        />
-    )
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        openSubCategoryNow: () => {
+            dispatch(openSubCategory());
+        },
+        setCategory: (items) => {
+            dispatch(setCategoryAC(items));
+        }
 
+    }
+}
+const CategoryItemContainer = connect(mapStateToProps, mapDispatchToProps)(CategoryItem);
 export default CategoryItemContainer;
