@@ -1,11 +1,24 @@
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }
 .container {
+    box-sizing: border-box;
     display: flex;
     height: 88px;
     width: 100%;
     background: #FFFFFF;
     box-shadow: 0 12px 34px rgba(7, 8, 35, 0.15);
     z-index: 1;
+}
 
+.nav {
+    width: 1366px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -16,16 +29,13 @@
     letter-spacing: 6px;
     color: #050816;
     font-weight: bold;
-
-
 }
 
 .btn {
-    outline:none;
+    outline: none;
     display: flex;
     width: 52px;
     border-radius: 1px;
-    /*margin: 0 0 0 10px;*/
     height: 40px;
     align-items: center;
     justify-content: center;
@@ -34,35 +44,40 @@
     border: none;
     cursor: pointer;
 }
-.btn:hover{
+
+
+.btnHover:hover {
     border-radius: 10px;
-    /*background-color: transparent;*/
-    background-color:rgba(0,0,0,0.1) !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
+.btnClipboard {
+    padding-right: 20px;
+}
 
-.linkLogo{
+.containerCount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linkLogo {
     text-decoration: none;
 }
-.price{
-    font-size: 40px;
+
+.price {
+    font-size: 24px;
     margin: 0 5px 0 0;
 }
-.currency{
-    font-size: 40px;
+
+.currency {
+    font-size: 15px;
+    margin: 0;
 }
-.nav {
-    display: flex;
-    align-items: center;
-    max-width: 1366px;
-    margin: 0 auto;
-
-
-}
-
 
 
 .searchWidth {
+    color:#0d0d0e;
     font-size: 14px;
     line-height: 16px;
     width: 100%;
@@ -74,25 +89,21 @@
     font-size: 14px;
     line-height: 16px;
     padding-left: 15px;
-    color: #A5A6AB;
-    /*color: #2d2d2d;*/
-    background: #9B9CA2;
-    opacity: 0.2;
+    color:#0d0d0e;
+    /*background: #9B9CA2;*/
+
+    border: 2px solid #9B9CA2;
     border-radius: 7px;
     height: 40px;
     width: 100%;
     margin: 0 25px;
-    min-width: 633px;
-    /*color: #ffffff;*/
-    border: none;
+
+    /*border: none;*/
 }
 
 
 .btnSearch {
-    background-color: transparent;
-    height: 35px;
-    transform: translate(-86px, 0);
-    border: none;
+    transform: translateX(-77px);
 }
 
 .imgBtn {

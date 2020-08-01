@@ -20,34 +20,23 @@ class NavBar extends React.Component {
 
                     <form className={style.searchWidth}>
                         <input className={style.search} type="search" name="q" placeholder="Поиск по сайту"/>
-                        {/*<NavLink to='/search'>*/}
-                        {/*    <button className={style.btnSearch}>*/}
-                        {/*        <img src={require("../../assets/svg-icon/search.svg")} alt=""/>*/}
-                        {/*    </button>*/}
-                        {/*</NavLink>*/}
                     </form>
-
-                    {/*<NavLink className={style.linkLogo} to='/product'>*/}
-                    {/*    <div className={style.logo}>*/}
-                    {/*        ITEM*/}
-                    {/*    </div>*/}
-                    {/*</NavLink>
-                    после удалить нафиг
-                    */}
-
-
+                    <button className={`${style.btnSearch} ${style.btn}`}>
+                        <img src={require("../../assets/svg-icon/search.svg")} alt=""/>
+                    </button>
                     {/*добавить всплювающие подсказки*/}
-                    <button className={`${style.btnClipboard} ${style.btn}`}>
+                    <button className={`${style.btnClipboard} ${style.btn} ${style.btnHover}`}>
                         <img src={require("../../assets/svg-icon/clipboard.svg")} alt=""/>
                     </button>
 
-                    {/*<CSSTransitionGroup></CSSTransitionGroup>*/}
-                    <button onClick={this.openShoppingCartNow} className={`${style.btnCart} ${style.btn}`}>
+                    <button onClick={this.openShoppingCartNow} className={`${style.btnCart} ${style.btnHover} ${style.btn}`}>
                         <img src={require("../../assets/svg-icon/shopping-cart.svg")} alt=""/>
-                        {/*<p className={style.price}>{*/}
-                        {/*    this.props.CartMoney*/}
-                        {/*}</p>*/}
-                        {/*<p className={style.currency}>₽</p>*/}
+                        {/*<div className={style.containerCount}>*/}
+                        {/*    <p className={style.price}>{*/}
+                        {/*        this.props.CartMoney*/}
+                        {/*    }</p>*/}
+                        {/*    <p className={style.currency}>₽</p>*/}
+                        {/*</div>*/}
                     </button>
                     <CartContainer store={this.props.store}/>
                     {/*    заменить картинки для btnFavorite and btnCart*/}
