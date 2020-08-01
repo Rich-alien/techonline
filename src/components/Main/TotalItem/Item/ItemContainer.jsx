@@ -1,17 +1,16 @@
-
 import {setItemsAC} from "../../../../Redux/mainReducer";
 import {connect} from "react-redux";
 import Item from "./Item";
 
 let mapStateToProps = (state) => {
     return {
-        products:state.mainPage.ObjItem
+        products: state.mainPage.Part,
     }
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        setItems:(items)=>{
-          dispatch(setItemsAC(items));
+        setItems: (items) => {
+            dispatch(setItemsAC(items));
         }
     }
 }
