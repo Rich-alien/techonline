@@ -8,7 +8,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -48,7 +52,6 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
     },
     {
@@ -59,7 +62,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -99,7 +106,6 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
     },
     {
@@ -110,7 +116,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -150,7 +160,6 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
     },
     {
@@ -161,7 +170,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -201,7 +214,6 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
     },
     {
@@ -212,7 +224,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -252,7 +268,6 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
     },
     {
@@ -263,7 +278,11 @@
       },
       "category": {
         "id": 0,
-        "name": "category"
+        "name": "category",
+        "subcategory": {
+          "id": 0,
+          "name": "subcategory"
+        }
       },
       "subcategory": {
         "id": 0,
@@ -303,8 +322,50 @@
           "date": "01.07.2020",
           "partId": 0
         }
-
       ]
+    }
+  ],
+  "Car": [
+    {
+      "id": 0,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 1,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 2,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 3,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 4,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 5,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 6,
+      "name": "Lada",
+      "image": "url"
+    },
+    {
+      "id": 7,
+      "name": "Lada",
+      "image": "url"
     }
   ]
 }
+
