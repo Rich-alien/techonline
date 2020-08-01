@@ -118,7 +118,6 @@ const mainReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_ITEMS: {
-            debugger;
             return {...state, ObjItem: [...state.ObjItem, ...action.ObjItem]}//берем старых и дописываем новых
         }
 
