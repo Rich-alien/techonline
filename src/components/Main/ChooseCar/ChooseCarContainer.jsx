@@ -4,7 +4,6 @@ import {openCategory} from "../../../Redux/mainReducer";
 
 let mapStateToProps = (state) => {
     return {
-        data: state.mainPage.data,
         styleDisplay: state.mainPage.styleBlock.chooseCar,
         titleUnderBlock: state.mainPage.titleUnderBlock.titleChooseCar,
     }
