@@ -11,6 +11,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SHOW_CART_ALL_MONEY = 'SHOW-CART-ALL-MONEY',
     SORT_DOWN = 'SORT-DOWN',
     SET_ITEMS = 'SET-ITEMS',
+    SET_CAR = 'SET-CAR',
     DOWN_COUNT = 'DOWN-COUNT';
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
@@ -24,7 +25,8 @@ export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
 export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
 export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
-export let setItemsAC = (ObjItem) => ({type: SET_ITEMS, ObjItem});
+export let setItemsAC = (Part) => ({type: SET_ITEMS, Part});
+export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
 export let sortDown = () => ({type: SORT_DOWN});
 
@@ -45,51 +47,16 @@ let initialState = {
         ObjTotalPrice: 1477,
     },
     Cart: [],
-    ObjItem: [],
-    data: [
-        {id: 0, CarName: 'Lada Granta', CarImg: 'IMG'},
-        {id: 1, CarName: 'Lada Granta', CarImg: 'IMG'},
-        {id: 2, CarName: 'Lada Granta', CarImg: 'IMG'},
-        {id: 3, CarName: 'Lada Granta', CarImg: 'IMG'},
-        // {id: 4, CarName: 'Другое', CarImg: 'обводка машины'},
-
-    ],
+    Part: [],
+    CarItems: [],
     SubCategory: [
         {id: 0, SubCategoryName: 'SubCategory'},
-        {id: 1, SubCategoryName: 'SubCategory'},
-        {id: 2, SubCategoryName: 'SubCategory'},
-        {id: 3, SubCategoryName: 'SubCategory'},
-        {id: 4, SubCategoryName: 'SubCategory'},
-        {id: 5, SubCategoryName: 'SubCategory'},
-        {id: 6, SubCategoryName: 'SubCategory'},
-        {id: 7, SubCategoryName: 'SubCategory'},
-        {id: 8, SubCategoryName: 'SubCategory'},
-        {id: 9, SubCategoryName: 'SubCategory'},
-        {id: 10, SubCategoryName: 'SubCategory'},
-        {id: 11, SubCategoryName: 'SubCategory'},
-        {id: 12, SubCategoryName: 'SubCategory'},
-        {id: 13, SubCategoryName: 'SubCategory'},
-        {id: 14, SubCategoryName: 'SubCategory'},
-        {id: 15, SubCategoryName: 'SubCategory'},
+
 
     ],
     category: [
         {id: 0, Category: 'Lin1'},
-        {id: 1, Category: 'Lin2'},
-        {id: 2, Category: 'Lin3'},
-        {id: 3, Category: 'Lin4'},
-        {id: 4, Category: 'Lin5'},
-        {id: 5, Category: 'Lin6'},
-        {id: 6, Category: 'Lin7'},
-        {id: 7, Category: 'Lin8'},
-        {id: 8, Category: 'Lin9'},
-        {id: 9, Category: 'Lin10'},
-        {id: 10, Category: 'Lin11'},
-        {id: 11, Category: 'Lin12'},
-        {id: 12, Category: 'Lin13'},
-        {id: 13, Category: 'Lin14'},
-        {id: 14, Category: 'Lin15'},
-        {id: 15, Category: 'Lin16'},
+
 
     ],
     titleUnderBlock: {
@@ -117,10 +84,18 @@ const mainReducer = (state = initialState, action) => {
     }
     switch (action.type) {
 
-        case SET_ITEMS: {
-            return {...state, ObjItem: [...state.ObjItem, ...action.ObjItem]}//берем старых и дописываем новых
+        case SET_CAR: {
+            return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
         }
-
+        // case SET_CATEGORY: {
+        //     return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
+        // }
+        // case SET_SUB_CATEGORY: {
+        //     return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
+        // }
+        case SET_ITEMS: {
+            return {...state, Part: [...state.Part, ...action.Part]}//берем старых и дописываем новых
+        }
         //открытие и закрытие корзины;
         case OPEN_SHOPPING_CART: {
             stateCopy.styleBlock.blur = 'blur(3px)';
@@ -129,7 +104,7 @@ const mainReducer = (state = initialState, action) => {
         }
         case SORT_DOWN: {
             let stateCopy = {...state}
-            stateCopy.ObjItem = {...state}
+            stateCopy.Part = {...state}
             //сортировка по уменьшению
             return stateCopy;
         }
