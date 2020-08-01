@@ -12,6 +12,8 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SORT_DOWN = 'SORT-DOWN',
     SET_ITEMS = 'SET-ITEMS',
     SET_CAR = 'SET-CAR',
+    SET_CATEGORY='SET-CATEGORY',
+    SET_SUB_CATEGORY='SET-SUB-CATEGORY',
     DOWN_COUNT = 'DOWN-COUNT';
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
@@ -27,11 +29,19 @@ export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
 export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
 export let setItemsAC = (Part) => ({type: SET_ITEMS, Part});
 export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
+export let setCategoryAC =(Category)=>({type:SET_CATEGORY,Category});
+export let setSubCategoryAC =(SubCategory)=>({type:SET_SUB_CATEGORY,SubCategory});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
 export let sortDown = () => ({type: SORT_DOWN});
 
 
+
 let initialState = {
+    Cart: [],
+    Part: [],
+    CarItems: [],
+    Category: [],
+    SubCategory: [],
     viewProduct: {
         id: 0,
         ObjName: 'Квадрат Малевича',
@@ -46,19 +56,6 @@ let initialState = {
         ObjPrice: 1477,
         ObjTotalPrice: 1477,
     },
-    Cart: [],
-    Part: [],
-    CarItems: [],
-    SubCategory: [
-        {id: 0, SubCategoryName: 'SubCategory'},
-
-
-    ],
-    category: [
-        {id: 0, Category: 'Lin1'},
-
-
-    ],
     titleUnderBlock: {
         titleChooseCar: ' Выберите машину',
         titleChooseCategory: ' Выберите категорию',
@@ -85,16 +82,16 @@ const mainReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_CAR: {
-            return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
+            return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//поглащаем новые жертвы
         }
-        // case SET_CATEGORY: {
-        //     return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
-        // }
-        // case SET_SUB_CATEGORY: {
-        //     return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//берем старых и дописываем новых
-        // }
+        case SET_CATEGORY: {
+            return {...state, Category: [...state.Category, ...action.Category]}//поглащаем новые жертвы
+        }
+        case SET_SUB_CATEGORY: {
+            return {...state, SubCategory: [...state.SubCategory, ...action.SubCategory]}//поглащаем новые жертвы
+        }
         case SET_ITEMS: {
-            return {...state, Part: [...state.Part, ...action.Part]}//берем старых и дописываем новых
+            return {...state, Part: [...state.Part, ...action.Part]}//поглащаем новые жертвы
         }
         //открытие и закрытие корзины;
         case OPEN_SHOPPING_CART: {
