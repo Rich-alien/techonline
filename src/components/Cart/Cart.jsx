@@ -3,7 +3,7 @@ import style from "./Cart.module.css"
 import CartItem from "./CartItem/CartItem";
 
 class Cart extends React.Component {
-    styleDisplay = this.props.styleDisplay;
+
     ElementItem = this.props.Cart.map(e => <CartItem
         key={e.id}
         ObjName={e.ObjName}
@@ -17,7 +17,7 @@ class Cart extends React.Component {
 
     render() {
         return (
-            <div style={{display: this.styleDisplay}} className={style.container}>
+            <div style={{display: this.props.styleDisplay.shoppingCart}} className={style.container}>
                 <button
                     onClick={this.closeShoppingCartNow}
                     className={style.buttonBack}>
