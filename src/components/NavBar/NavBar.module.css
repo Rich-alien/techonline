@@ -86,6 +86,7 @@ input::-webkit-search-results-decoration { display: none; }
 }
 
 .search {
+    outline: none;
     font-size: 14px;
     line-height: 16px;
     padding-left: 15px;
