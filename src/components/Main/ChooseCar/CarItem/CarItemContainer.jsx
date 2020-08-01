@@ -1,23 +1,21 @@
-import React from 'react';
-import {openCategory, upCount} from "../../../../Redux/mainReducer";
+import {openCategory, setCarAC} from "../../../../Redux/mainReducer";
 import {connect} from "react-redux";
 import CarItem from "./CarItem";
-
-
 let mapStateToProps = (state) => {
-    return{
-        CarImg:state.mainPage.data.CarImg,
-        CarName:state.mainPage.data.CarName,
+    return {
+        products: state.mainPage.CarItems,
     }
 }
 let mapDispatchToProps = (dispatch) => {
-    return{
-        openCategoryNow : () => {
+    return {
+        openCategoryNow: () => {
             dispatch(openCategory());
         },
+        setCar: (items) => {
+            dispatch(setCarAC(items));
+        }
 
     }
 }
-const CarItemContainer =  connect(mapStateToProps,mapDispatchToProps)(CarItem);
-
+const CarItemContainer = connect(mapStateToProps, mapDispatchToProps)(CarItem);
 export default CarItemContainer;
