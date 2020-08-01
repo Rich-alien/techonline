@@ -11,11 +11,11 @@ class ItemDescription extends React.Component{
      addOnCart = () => {
         this.props.addInCartNow();
     }
-    blurN = this.props.blur;
+        blur = this.props.blur;
 
     render() {
     return (
-        <div style={{filter:this.blurN}} className={style.container }>
+        <div style={{filter:this.blur}} className={style.container }>
             <div className={style.productImgContainer}>
                 <div className={style.productImg}>
                     <img src={require("../../assets/images/productImg.png")} alt="Item"/>
