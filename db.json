@@ -1,83 +1,310 @@
 {
-  "ObjItem": [
+  "Part": [
     {
       "id": 0,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
 
+      ]
     },
     {
       "id": 1,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
+
+      ]
     },
     {
       "id": 2,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
+
+      ]
     },
     {
       "id": 3,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
+
+      ]
     },
     {
       "id": 4,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
+
+      ]
     },
     {
       "id": 5,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 6,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 7,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 8,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 9,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 10,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 11,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
-    },
-    {
-      "id": 12,
-      "ObjName": "some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff",
-      "ObjImg": "SomeImg",
-      "ObjPrice": "123rub"
+      "carModel": {
+        "id": 0,
+        "name": "model"
+      },
+      "category": {
+        "id": 0,
+        "name": "category"
+      },
+      "subcategory": {
+        "id": 0,
+        "name": "subcategory"
+      },
+      "manufacturer": "BORATEX",
+      "name": "EVA 3D",
+      "images": [
+        {
+          "id": 0,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 1,
+          "url": "./src/assets/images/productImg.png"
+        },
+        {
+          "id": 2,
+          "url": "./src/assets/images/productImg.png"
+        }
+      ],
+      "description": "3D ковры EVA закрывают ковролин на все 100%.С обратной стороны по всей поверхности липучка, которая не даст вашему ковру скользить.",
+      "price": 2800,
+      "count": 6,
+      "comments": [
+        {
+          "id": 0,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        },
+        {
+          "id": 1,
+          "message": "топ товар за свои деньги",
+          "author": "Павел",
+          "date": "01.07.2020",
+          "partId": 0
+        }
+
+      ]
     }
   ]
 }
