@@ -4,11 +4,10 @@ import {connect} from "react-redux";
 
 
 let mapStateToProps = (state) => {
+
     return {
         Cart: state.mainPage.Cart,
-        styleDisplay: state.mainPage.styleBlock.shoppingCart,
-
-
+        styleDisplay: state.mainPage.styleBlock,
     }
 }
 let mapDispatchToProps = (dispatch) => {
