@@ -4,8 +4,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        category: state.mainPage.category,
-        styleDisplay: state.mainPage.styleBlock.categoryDisplay,
+        categoryDisplay: state.mainPage.styleBlock.categoryDisplay,
         titleUnderBlock: state.mainPage.titleUnderBlock.titleChooseCategory,
     }
 }
