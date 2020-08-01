@@ -30,7 +30,10 @@
     background-color: #eeeeee;
     margin: 0;
 }
-
+.img{
+    width: 316px;
+    height: 300px;
+}
 .ObjPrice {
     text-align: left;
     width: 316px;
