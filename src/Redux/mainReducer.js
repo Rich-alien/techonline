@@ -10,6 +10,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     CLOSE_SHOPPING_CART = 'ClOSE-SHOPPING-CART',
     SHOW_CART_ALL_MONEY = 'SHOW-CART-ALL-MONEY',
     SORT_DOWN = 'SORT-DOWN',
+    SET_ITEMS = 'SET-ITEMS',
     DOWN_COUNT = 'DOWN-COUNT';
 
 export let openCategory = () => ({type: OPEN_CATEGORY});
@@ -23,11 +24,12 @@ export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
 export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
 export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
+export let setItemsAC = (ObjItem) => ({type: SET_ITEMS, ObjItem});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
 export let sortDown = () => ({type: SORT_DOWN});
 
 
-let mainPageData = {
+let initialState = {
     viewProduct: {
         id: 0,
         ObjName: 'Квадрат Малевича',
@@ -43,88 +45,7 @@ let mainPageData = {
         ObjTotalPrice: 1477,
     },
     Cart: [],
-    ObjItem: [
-
-        {
-            id: 0,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-
-        },
-        {
-            id: 1,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 2,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 3,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 4,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 5,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 6,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 7,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 8,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 9,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 10,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 11,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-        {
-            id: 12,
-            ObjName: 'some rfsdvdsfbefvbsdvsdvdsfvsd dsvdfffffffffffffffffffff',
-            ObjImg: 'SomeImg',
-            ObjPrice: '123rub'
-        },
-    ],
+    ObjItem: [],
     data: [
         {id: 0, CarName: 'Lada Granta', CarImg: 'IMG'},
         {id: 1, CarName: 'Lada Granta', CarImg: 'IMG'},
@@ -189,23 +110,28 @@ let mainPageData = {
     },
     CartMoney: 0,
 }
-const mainReducer = (state = mainPageData, action) => {
-    // debugger;
+const mainReducer = (state = initialState, action) => {
+    let stateCopy = {
+        ...state,
+        styleBlock: {...state.styleBlock},
+    }
     switch (action.type) {
+
+        case SET_ITEMS: {
+            debugger;
+            return {...state, ObjItem: [...state.ObjItem, ...action.ObjItem]}//берем старых и дописываем новых
+        }
+
         //открытие и закрытие корзины;
         case OPEN_SHOPPING_CART: {
-            let stateCopy = {...state}
-            stateCopy.styleBlock.shoppingCart = 'flex';
             stateCopy.styleBlock.blur = 'blur(3px)';
-
+            stateCopy.styleBlock.shoppingCart = 'flex';
             return stateCopy;
         }
         case SORT_DOWN: {
             let stateCopy = {...state}
             stateCopy.ObjItem = {...state}
             //сортировка по уменьшению
-
-
             return stateCopy;
         }
         case CLOSE_SHOPPING_CART: {
