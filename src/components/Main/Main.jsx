@@ -13,9 +13,9 @@ const Main = (props) => {
         <BrowserRouter>
             <div className={style.main}>
                 <NavBarContainer store={props.store}/>
-                <Route path='/product' render={() => <ItemDescriptionContainer store={props.store}/>}/>
-                <Route path='/productView' render={() => <ProductView store={props.store}/>}/>
-                <Route path='/search' render={() => <SearchPage store={props.store}/>}/>
+                <Route path='/product' render={() => <ItemDescriptionContainer />}/>
+                <Route path='/productView' render={() => <ProductView />}/>
+                <Route path='/search' render={() => <SearchPage />}/>
                 <Footer/>
             </div>
         </BrowserRouter>

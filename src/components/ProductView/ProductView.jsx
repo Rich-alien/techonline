@@ -6,14 +6,14 @@ import SubChooseCategoryContainer from "../Main/SubChooseCategoty/SubChooseCateg
 import TotalItemContainer from "../Main/TotalItem/TotalItemContainer";
 
 
-const ProductView = (props) => {
+const ProductView = () => {
     return (
-            <div className={style.main}>
-                <ChooseCarContainer store={props.store}/>
-                <ChooseCategoryContainer store={props.store}/>
-                <SubChooseCategoryContainer store={props.store}/>
-                <TotalItemContainer store={props.store}/>
-            </div>
+        <div className={style.main}>
+            <ChooseCarContainer/>
+            <ChooseCategoryContainer/>
+            <SubChooseCategoryContainer/>
+            <TotalItemContainer/>
+        </div>
     )
 }
 
