@@ -12,12 +12,12 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SORT_DOWN = 'SORT-DOWN',
     SET_ITEMS = 'SET-ITEMS',
     SET_CAR = 'SET-CAR',
-    SET_CATEGORY='SET-CATEGORY',
-    SET_SUB_CATEGORY='SET-SUB-CATEGORY',
+    SET_CATEGORY = 'SET-CATEGORY',
+    SET_SUB_CATEGORY = 'SET-SUB-CATEGORY',
     DOWN_COUNT = 'DOWN-COUNT';
 
-export let openCategory = () => ({type: OPEN_CATEGORY});
-export let openSubCategory = () => ({type: OPEN_SUB_CATEGORY});
+export let openCategoryAC = (carID) => ({type: OPEN_CATEGORY,carID});
+export let openSubCategoryAC = (categoryID) => ({type: OPEN_SUB_CATEGORY,categoryID});
 export let openTitleAC = () => ({type: OPEN_TITLE});
 export let closeTitle = () => ({type: CLOSE_TITLE});
 export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
@@ -27,13 +27,13 @@ export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
 export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
 export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
+
 export let setItemsAC = (Part) => ({type: SET_ITEMS, Part});
 export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
-export let setCategoryAC =(Category)=>({type:SET_CATEGORY,Category});
-export let setSubCategoryAC =(SubCategory)=>({type:SET_SUB_CATEGORY,SubCategory});
+export let setCategoryAC = (Category) => ({type: SET_CATEGORY, Category});
+export let setSubCategoryAC = (SubCategory) => ({type: SET_SUB_CATEGORY, SubCategory});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
 export let sortDown = () => ({type: SORT_DOWN});
-
 
 
 let initialState = {
@@ -65,12 +65,17 @@ let initialState = {
     nowTitleUnderBlock: '',
     styleBlock: {
         blur: 'none',
-        chooseCar: 'flex',
-        categoryDisplay: 'none',
+        chooseCar: 'none',
+        categoryDisplay: 'flex',
         subCategoryDisplay: 'none',
         totalItem: 'none',
         shoppingCart: 'none'
 
+    },
+    idCart: {
+        Car: '0',
+        Category: '0',
+        SubCategory:'0',
     },
     CartMoney: 0,
 }
@@ -78,9 +83,10 @@ const mainReducer = (state = initialState, action) => {
     let stateCopy = {
         ...state,
         styleBlock: {...state.styleBlock},
+        titleUnderBlock: {...state.titleUnderBlock},
+        idCart: {...state.idCart}
     }
     switch (action.type) {
-
         case SET_CAR: {
             return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//поглащаем новые жертвы
         }
@@ -156,30 +162,25 @@ const mainReducer = (state = initialState, action) => {
         }
         /*функции для открытия и закрытя категорий*/
         case OPEN_CATEGORY: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.categoryDisplay = 'flex';
             stateCopy.styleBlock.chooseCar = 'none';
             stateCopy.styleBlock.totalItem = 'none';
+            stateCopy.idCart.Car = action.carID;
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
+            // console.log(stateCopy.styleBlock);
+            console.log(stateCopy.idCart);
             return stateCopy;
         }
         case OPEN_SUB_CATEGORY: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.subCategoryDisplay = 'flex';
             stateCopy.styleBlock.categoryDisplay = 'none';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
+            stateCopy.idCart.Category = action.categoryID;
+            // console.log(stateCopy.styleBlock);
+            console.log(stateCopy.idCart);
             return stateCopy;
         }
         case OPEN_TITLE: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
             stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.totalItem = 'block';
             stateCopy.styleBlock.subCategoryDisplay = 'none';
@@ -187,31 +188,18 @@ const mainReducer = (state = initialState, action) => {
             return stateCopy;
         }
         case CLOSE_TITLE: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.totalItem = 'none';
             stateCopy.styleBlock.subCategoryDisplay = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
             return stateCopy;
         }
         case CLOSE_SUB_CATEGORY: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
-
             stateCopy.styleBlock.subCategoryDisplay = 'none';
             stateCopy.styleBlock.categoryDisplay = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
             return stateCopy;
         }
         case CLOSE_CATEGORY: {
-            let stateCopy = {...state};
-            stateCopy.styleBlock = {...state.styleBlock};
-            stateCopy.titleUnderBlock = {...state.titleUnderBlock};
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.categoryDisplay = 'none';
             stateCopy.styleBlock.chooseCar = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCar;
