@@ -11,21 +11,20 @@ class CarItem extends React.Component {
         });
     }
 
-    onOpenCategory = () => {
-        this.props.openCategoryNow();
-    }
+
     breakPoints=[
         {width:1,itemsToShow:1},
         {width:850,itemsToShow:2},
         {width:1200,itemsToShow:3},
     ]
+
     render() {
         return (
             <div className={style.container}>
                 <Carousel breakPoints={this.breakPoints}>
                     {
                         this.props.products.map(u =>
-                            <div className={style.containerItem} key={u.id}>
+                            <div className={style.containerItem} onClick={()=>{this.props.openCategory(u.id)}} key={u.id}>
                                 <img className={style.imgCar} src={carImg} alt="love"/>
                                 <div className={style.CarNameBlock}>
                                     <h1 className={style.CarName}>
