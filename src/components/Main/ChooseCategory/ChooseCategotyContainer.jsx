@@ -1,4 +1,4 @@
-import {closeCategory, openSubCategory} from "../../../Redux/mainReducer";
+import {closeCategory} from "../../../Redux/mainReducer";
 import ChooseCategory from "./ChooseCategoty";
 import {connect} from "react-redux";
 
@@ -13,9 +13,6 @@ let mapDispatchToProps = (dispatch) => {
         goBack: () => {
             dispatch(closeCategory());
         },
-        openSubCategoryNow: () => {
-            dispatch(openSubCategory());
-        }
     }
 }
 const ChooseCategoryContainer = connect(mapStateToProps, mapDispatchToProps)(ChooseCategory);
