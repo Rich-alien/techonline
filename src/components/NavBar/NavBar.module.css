@@ -52,7 +52,8 @@ input::-webkit-search-results-decoration { display: none; }
 }
 
 .btnClipboard {
-    padding-right: 20px;
+    margin-right: 20px;
+    /*padding-right: 20px;*/
 }
 
 .containerCount {
