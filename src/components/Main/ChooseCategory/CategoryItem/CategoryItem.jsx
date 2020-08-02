@@ -10,21 +10,20 @@ class CategoryItem extends React.Component {
         });
     }
 
-    onOpenSubCategoryNow = () => {
-        this.props.openSubCategoryNow();
-    }
+
 
     render() {
         return (
-            <button onClick={this.onOpenSubCategoryNow} className={style.container}>
+            <div className={style.container}>
                 {
-                    this.props.products.map(u => <div key={u.id}>
+                    this.props.products.map(u =>
+                        <button onClick={()=>{this.props.openSubCategory(u.id)}} className={style.containerItem} key={u.id}>
                         {
                             u.name
                         }
-                    </div>)
+                    </button>)
                 }
-            </button>
+            </div>
         )
     }
 }
