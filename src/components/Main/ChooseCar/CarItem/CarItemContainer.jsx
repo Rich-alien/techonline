@@ -1,4 +1,4 @@
-import {openCategory, setCarAC} from "../../../../Redux/mainReducer";
+import {openCategoryAC, setCarAC} from "../../../../Redux/mainReducer";
 import {connect} from "react-redux";
 import CarItem from "./CarItem";
 let mapStateToProps = (state) => {
@@ -8,8 +8,8 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        openCategoryNow: () => {
-            dispatch(openCategory());
+        openCategory: (carID) => {
+            dispatch(openCategoryAC(carID));
         },
         setCar: (items) => {
             dispatch(setCarAC(items));
