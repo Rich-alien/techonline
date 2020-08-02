@@ -1,4 +1,4 @@
-import {openSubCategory, setCategoryAC} from "../../../../Redux/mainReducer";
+import {openSubCategoryAC, setCategoryAC} from "../../../../Redux/mainReducer";
 import CategoryItem from "./CategoryItem";
 import {connect} from "react-redux";
 
@@ -9,8 +9,8 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        openSubCategoryNow: () => {
-            dispatch(openSubCategory());
+        openSubCategory: (categoryID) => {
+            dispatch(openSubCategoryAC(categoryID));
         },
         setCategory: (items) => {
             dispatch(setCategoryAC(items));
