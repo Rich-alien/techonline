@@ -16,12 +16,14 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SET_SUB_CATEGORY = 'SET-SUB-CATEGORY',
     DOWN_COUNT = 'DOWN-COUNT';
 
-export let openCategoryAC = (carID) => ({type: OPEN_CATEGORY,carID});
-export let openSubCategoryAC = (categoryID) => ({type: OPEN_SUB_CATEGORY,categoryID});
-export let openTitleAC = () => ({type: OPEN_TITLE});
+export let openCategoryAC = (carID) => ({type: OPEN_CATEGORY, carID});
+export let openSubCategoryAC = (categoryID) => ({type: OPEN_SUB_CATEGORY, categoryID});
+export let openTitleAC = (subCategoryID) => ({type: OPEN_TITLE, subCategoryID});
+
 export let closeTitle = () => ({type: CLOSE_TITLE});
 export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
 export let closeCategory = () => ({type: CLOSE_CATEGORY});
+
 export let upCount = () => ({type: UP_COUNT});
 export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
@@ -75,7 +77,7 @@ let initialState = {
     idCart: {
         Car: '0',
         Category: '0',
-        SubCategory:'0',
+        SubCategory: '0',
     },
     CartMoney: 0,
 }
@@ -167,7 +169,6 @@ const mainReducer = (state = initialState, action) => {
             stateCopy.styleBlock.totalItem = 'none';
             stateCopy.idCart.Car = action.carID;
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
-            // console.log(stateCopy.styleBlock);
             console.log(stateCopy.idCart);
             return stateCopy;
         }
@@ -176,15 +177,15 @@ const mainReducer = (state = initialState, action) => {
             stateCopy.styleBlock.categoryDisplay = 'none';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
             stateCopy.idCart.Category = action.categoryID;
-            // console.log(stateCopy.styleBlock);
             console.log(stateCopy.idCart);
             return stateCopy;
         }
         case OPEN_TITLE: {
-            stateCopy.nowTitleUnderBlock = {...state.nowTitleUnderBlock};
             stateCopy.styleBlock.totalItem = 'block';
             stateCopy.styleBlock.subCategoryDisplay = 'none';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleTotalItem;
+            stateCopy.idCart.SubCategory = action.subCategoryID;
+            console.log(stateCopy.idCart);
             return stateCopy;
         }
         case CLOSE_TITLE: {
