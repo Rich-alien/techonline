@@ -1,6 +1,5 @@
 import {connect} from "react-redux";
 import ChooseCar from "./ChooseCar";
-import {openCategory} from "../../../Redux/mainReducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -8,11 +7,9 @@ let mapStateToProps = (state) => {
         titleUnderBlock: state.mainPage.titleUnderBlock.titleChooseCar,
     }
 }
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = () => {
     return {
-        openCategoryNow: () => {
-            dispatch(openCategory());
-        },
+
     }
 }
 
