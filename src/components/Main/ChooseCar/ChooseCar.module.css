@@ -1,28 +1,18 @@
 .container {
-    max-width: 1366px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
-
-.carContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    height: 700px;
-    /*margin: 10px;*/
-    border-radius: 3px;
-}
-
-.text {
-    display: flex;
-    align-items: center;
+.containerSlider{
     width: 100%;
-    text-align: left;
-    padding-top: 40px;
-    /*padding-left: 15px;*/
+}
+.underText{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
 }
 .carText{
-    font-weight: 700;
+    font-weight: 600;
     font-size: 24px;
 }
