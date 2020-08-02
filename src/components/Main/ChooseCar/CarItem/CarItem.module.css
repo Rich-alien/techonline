@@ -1,21 +1,24 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     max-width: 1366px;
-    margin: 0 auto;
-
+    margin: 12px auto;
 }
-.imgCar{
+
+.imgCar {
     width: 400px;
     height: 280px;
 }
-.CarNameBlock{
+
+.CarNameBlock {
 
 }
-.containerItem{
+
+.containerItem {
     width: 100%;
     background: #FFFFFF;
-        border-radius: 15px;
-        margin-left: 10px;
-        padding-top: 30px;
+    border-radius: 15px;
+    margin-left: 10px;
+    padding-top: 30px;
+    cursor: pointer;
 }
