@@ -5,7 +5,7 @@ import * as axios from "axios";
 
 class Item extends React.Component {
     componentDidMount() {
-        axios.get("http://192.168.1.104:3000/Part").then(response => {
+        axios.get("http://localhost:3000/Part").then(response => {
             this.props.setItems(response.data)
         });
     }
@@ -13,7 +13,8 @@ class Item extends React.Component {
         return (
             <div className={style.container}>
                 {
-                    this.props.products.map(u => <div key={u.id}>
+                    this.props.products.map(u =>
+                        <div key={u.id} className={style.blockContainer}>
                             <div className={style.ObjImg}>
                                 {/*<img src={u.images[0].url} alt="запчасть"/>*/}
                                 <img className={style.img} src={require("../../../../assets/images/productImg.png")} alt="запчасть"/>
