@@ -18,7 +18,9 @@ class SubChooseCategory extends React.Component {
                         }
                     </p>
                 </div>
-                    <SubCategoryItemContainer/>
+                    <div className={style.top}>
+                        <SubCategoryItemContainer/>
+                    </div>
             </div>
         )
     }

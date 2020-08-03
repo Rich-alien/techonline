@@ -1,5 +1,6 @@
 .Subcontainer {
-    height: 100%;
+    text-decoration: none;
+    height: auto;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
@@ -25,4 +26,11 @@
 .SubcontainerItem:hover {
     background-color: rgba(0, 0, 0, 0.2) !important;
     color: #FFFFFF;
+}
+.text{
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
 }
