@@ -9,7 +9,7 @@ class ChooseCategory extends React.Component {
 
     render() {
         return (
-            <div style={{display: this.categoryDisplay}} className={style.container}>
+            <div style={{display: this.props.categoryDisplay}} className={style.container}>
                 <div className={style.underText}>
                     <img src={require("../../../assets/svg-icon/bulb.svg")} alt="bulb"/>
                     <p className={style.carText}>
@@ -18,7 +18,6 @@ class ChooseCategory extends React.Component {
                         }
                     </p>
                 </div>
-
                 <CategoryItemContainer/>
             </div>
         )
