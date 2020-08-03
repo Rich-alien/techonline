@@ -12,18 +12,17 @@ class TotalItem extends React.Component{
     }
     render() {
         return (
-            <div style={{display:this.props.styleDisplay}} className={style.container}>
+            <div  className={style.container}>
                 <div className={style.SettingBar}>
-
                     <div className={style.sort}>
                         <button className={`${style.btn} ${style.StanDart}`}>
                             {/*изменить className*/}
                             а....я
                         </button>
                         <div>
-                            <div className={style.btn} onClick={this.goBackNow}>
-                                Вернуться назад
-                            </div>
+                            {/*<div className={style.btn} onClick={this.goBackNow}>*/}
+                            {/*    Вернуться назад*/}
+                            {/*</div>*/}
                         </div>
                         <div>
                             <button className={`${style.btn} ${style.sortUp}`}>
@@ -33,14 +32,20 @@ class TotalItem extends React.Component{
                                 по цене, дешевые
                             </button>
                         </div>
+
                     </div>
+
                 </div>
+                <div className={style.Block}>
+                    <ItemContainer/>
+                </div>
+
                 {/*<div className={style.catalog}>*/}
                 {/*    {*/}
                 {/*        this.ElementItem*/}
                 {/*    }*/}
                 {/*</div>*/}
-                <ItemContainer/>
+
             </div>
         )
     }
