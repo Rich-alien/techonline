@@ -12,7 +12,7 @@ class NavBar extends React.Component {
         return (
             <div className={style.container}>
                 <nav className={style.nav}>
-                    <NavLink className={style.linkLogo} to='/productView'>
+                    <NavLink className={style.linkLogo} to='/car'>
                         <div className={style.logo}>
                             SLADA
                         </div>
