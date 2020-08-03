@@ -3,26 +3,33 @@ import style from './SubCategoryItem.module.css'
 import * as axios from "axios";
 
 
-class  SubCategoryItem extends React.Component{
+class SubCategoryItem extends React.Component {
     componentDidMount() {
-        axios.get("http://192.168.1.104:3000/Subcategory").then(response => {
-            this.props.setSubCategory(response.data)
-        });
+        let ID = this.props.IDsc
+        if (this.props.products.length === 0) {
+            axios.get("http://192.168.1.104:3000/Category").then(response => {
+                debugger;
+                this.props.setSubCategory(response.data[ID].subcategory)
+            });
+        }
     }
-     openTitleNow = () => {
+
+    openTitleNow = () => {
         this.props.openTitle();
     }
+
     render() {
         return (
-            <button onClick={this.openTitleNow} className={style.container}>
+            <div className={style.Subcontainer}>
                 {
-                    this.props.products.map(u => <div key={u.id}>
-                        {
-                            u.name
-                        }
-                    </div>)
+                    this.props.products.map(u =>
+                        <button key={parseInt(u.id, 10)} onClick={this.openTitleNow} className={style.SubcontainerItem}>
+                            {
+                                u.name
+                            }
+                        </button>)
                 }
-            </button>
+            </div>
         )
     }
 }
