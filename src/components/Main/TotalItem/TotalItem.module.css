@@ -3,6 +3,8 @@
     /*    flex-direction: column;*/
     /*!*justify-content: center;*!*/
     /*    align-items: center;*/
+    display: flex;
+    flex-direction: column;
     min-width: 100%;
     height: auto;
     /*border: 3px solid black;*/
@@ -22,7 +24,10 @@
     border-top: 1px solid #dddddd;
     background-color: #eeeeee;
 }
-
+.Block{
+    margin: 0 auto;
+    max-width: 1366px;
+}
 
 .sort {
     padding:10px 0;
