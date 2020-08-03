@@ -44,6 +44,7 @@ let initialState = {
     CarItems: [],
     Category: [],
     SubCategory: [],
+    SubCategoryID: 0 ,
     viewProduct: {
         id: 0,
         ObjName: 'Квадрат Малевича',
@@ -67,11 +68,11 @@ let initialState = {
     nowTitleUnderBlock: '',
     styleBlock: {
         blur: 'none',
-        chooseCar: 'none',
+        shoppingCart: 'none',
+        chooseCar: 'flex',
         categoryDisplay: 'flex',
-        subCategoryDisplay: 'none',
-        totalItem: 'none',
-        shoppingCart: 'none'
+        subCategoryDisplay: 'flex',
+        totalItem: 'flex'
 
     },
     idCart: {
@@ -164,45 +165,33 @@ const mainReducer = (state = initialState, action) => {
         }
         /*функции для открытия и закрытя категорий*/
         case OPEN_CATEGORY: {
-            stateCopy.styleBlock.categoryDisplay = 'flex';
-            stateCopy.styleBlock.chooseCar = 'none';
-            stateCopy.styleBlock.totalItem = 'none';
             stateCopy.idCart.Car = action.carID;
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
             console.log(stateCopy.idCart);
             return stateCopy;
         }
         case OPEN_SUB_CATEGORY: {
-            stateCopy.styleBlock.subCategoryDisplay = 'flex';
-            stateCopy.styleBlock.categoryDisplay = 'none';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
             stateCopy.idCart.Category = action.categoryID;
-            console.log(stateCopy.idCart);
+            let ID=parseInt(action.categoryID,10)
+            stateCopy.SubCategoryID = ID;
             return stateCopy;
         }
         case OPEN_TITLE: {
-            stateCopy.styleBlock.totalItem = 'block';
-            stateCopy.styleBlock.subCategoryDisplay = 'none';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleTotalItem;
             stateCopy.idCart.SubCategory = action.subCategoryID;
             console.log(stateCopy.idCart);
             return stateCopy;
         }
         case CLOSE_TITLE: {
-            stateCopy.styleBlock.totalItem = 'none';
-            stateCopy.styleBlock.subCategoryDisplay = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
             return stateCopy;
         }
         case CLOSE_SUB_CATEGORY: {
-            stateCopy.styleBlock.subCategoryDisplay = 'none';
-            stateCopy.styleBlock.categoryDisplay = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
             return stateCopy;
         }
         case CLOSE_CATEGORY: {
-            stateCopy.styleBlock.categoryDisplay = 'none';
-            stateCopy.styleBlock.chooseCar = 'flex';
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCar;
             return stateCopy;
         }
