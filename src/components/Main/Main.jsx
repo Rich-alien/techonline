@@ -21,7 +21,7 @@ const Main = () => {
                 <Route path='/car' render={() => <ChooseCarContainer/>}/>
                 <Route path='/category' render={() => <ChooseCategoryContainer/>}/>
                 <Route path='/subCategory' render={() => <SubChooseCategoryContainer/>}/>
-                <Route path='/product' render={() => <TotalItemContainer/>}/>
+                <Route path='/cart' render={() => <TotalItemContainer/>}/>
                 <Footer/>
             </div>
         </BrowserRouter>
