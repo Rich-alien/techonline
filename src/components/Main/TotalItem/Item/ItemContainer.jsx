@@ -1,4 +1,4 @@
-import {setItemsAC} from "../../../../Redux/mainReducer";
+import {openProductAC, setItemsAC} from "../../../../Redux/mainReducer";
 import {connect} from "react-redux";
 import Item from "./Item";
 
@@ -12,6 +12,10 @@ let mapDispatchToProps = (dispatch) => {
     return {
         setItems: (items) => {
             dispatch(setItemsAC(items));
+        },
+        openProduct: (ID) => {
+            dispatch(openProductAC(ID))
+
         }
     }
 }
