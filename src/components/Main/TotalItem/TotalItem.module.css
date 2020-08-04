@@ -1,13 +1,8 @@
 .container {
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*!*justify-content: center;*!*/
-    /*    align-items: center;*/
     display: flex;
     flex-direction: column;
-    min-width: 100%;
+    width: 100%;
     height: auto;
-    /*border: 3px solid black;*/
 }
 .CartItemContainer{
     display: flex;
@@ -17,25 +12,28 @@
 }
 
 .SettingBar {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     height: auto;
     border-bottom: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
     background-color: #eeeeee;
+    width: 100%;
+}
+.sort {
+    padding:10px 0;
+    margin: 0 auto;
+    width: 1366px;
+    display: flex;
+    justify-content: space-between;
 }
 .Block{
     margin: 0 auto;
     max-width: 1366px;
 }
 
-.sort {
-    padding:10px 0;
-    margin: 0 auto;
-    min-width: 1366px;
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .StanDart {
     /*border:none;*/
