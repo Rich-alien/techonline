@@ -13,21 +13,27 @@ class Item extends React.Component {
             this.props.setItems(response.data)
         });
     }
+
     render() {
         return (
             <div className={style.container}>
                 {
+
                     this.props.products.map(u =>
-                        <NavLink to='/product' key={u.id} className={style.blockContainer}>
+                        <NavLink to='/product' key={u.id} onClick={() => {
+                            this.props.openProduct(u.id)
+                        }} className={style.blockContainer}>
                             <div className={style.ObjImg}>
                                 {/*<img src={u.images[0].url} alt="запчасть"/>*/}
-                                <img className={style.img} src={require("../../../../assets/images/productImg.png")} alt="запчасть"/>
+                                <img className={style.img} src={require("../../../../assets/images/productImg.png")}
+                                     alt="запчасть"/>
                                 {/*{*/}
                                 {/*    console.log(u.images)*/}
                                 {/*}*/}
                             </div>
                             <div className={style.ObjName}>
                                 {
+
                                     u.name
                                 }
                             </div>
