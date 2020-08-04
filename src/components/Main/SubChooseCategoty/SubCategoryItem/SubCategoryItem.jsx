@@ -24,7 +24,9 @@ class SubCategoryItem extends React.Component {
             <NavLink to='/cart' className={style.Subcontainer}>
                 {
                     this.props.products.map(u =>
-                        <button key={parseInt(u.id, 10)} onClick={()=>{this.props.openTitle(u.id)}} className={style.SubcontainerItem}>
+                        <button key={parseInt(u.id, 10)}
+                                onClick={()=>{this.props.openTitle(u.id)}}
+                                className={style.SubcontainerItem}>
                         <p className={style.text}>
                             {
                                 u.name
