@@ -1,29 +1,30 @@
 import React from 'react';
 import style from './TotalItem.module.css';
 import ItemContainer from "./Item/ItemContainer";
+
 // заменить sortUp and SortDown на иконки
 
 
-class TotalItem extends React.Component{
+class TotalItem extends React.Component {
 
 
-     goBackNow = ()=>{
+    goBackNow = () => {
         this.props.goBack();
     }
+
     render() {
         return (
-            <div  className={style.container}>
+            <div className={style.container}>
                 <div className={style.SettingBar}>
                     <div className={style.sort}>
-                        <button className={`${style.btn} ${style.StanDart}`}>
-                            {/*изменить className*/}
-                            а....я
-                        </button>
                         <div>
-                            {/*<div className={style.btn} onClick={this.goBackNow}>*/}
-                            {/*    Вернуться назад*/}
-                            {/*</div>*/}
+                            <button className={`${style.btn} ${style.StanDart}`}>
+                                {/*изменить className*/}
+                                а....я
+                            </button>
                         </div>
+
+
                         <div>
                             <button className={`${style.btn} ${style.sortUp}`}>
                                 по цене, дорогие
@@ -34,7 +35,6 @@ class TotalItem extends React.Component{
                         </div>
 
                     </div>
-
                 </div>
                 <div className={style.Block}>
                     <ItemContainer/>
@@ -50,7 +50,6 @@ class TotalItem extends React.Component{
         )
     }
 }
-
 
 
 export default TotalItem;
