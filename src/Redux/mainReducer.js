@@ -1,9 +1,10 @@
 const OPEN_CATEGORY = 'OPEN-CATEGORY',
+    CLOSE_CATEGORY = 'CLOSE-CATEGORY',
+    SET_CAR = 'SET-CAR',
     OPEN_SUB_CATEGORY = 'OPEN-SUB-CATEGORY',
     OPEN_TITLE = 'OPEN-TITLE',
     CLOSE_TITLE = 'CLOSE-TITLE',
     CLOSE_SUB_CATEGORY = 'CLOSE-SUB-CATEGORY',
-    CLOSE_CATEGORY = 'CLOSE-CATEGORY',
     UP_COUNT = 'UP-COUNT',
     ADD_IN_CART = 'ADD-IN-CART',
     OPEN_SHOPPING_CART = 'OPEN-SHOPPING-CART',
@@ -11,27 +12,33 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SHOW_CART_ALL_MONEY = 'SHOW-CART-ALL-MONEY',
     SORT_DOWN = 'SORT-DOWN',
     SET_ITEMS = 'SET-ITEMS',
-    SET_CAR = 'SET-CAR',
     SET_CATEGORY = 'SET-CATEGORY',
     SET_SUB_CATEGORY = 'SET-SUB-CATEGORY',
-    DOWN_COUNT = 'DOWN-COUNT';
+    DOWN_COUNT = 'DOWN-COUNT',
+    BLACK_SEARCH = 'BLACK-SEARCH',
+    OPEN_PRODUCT = 'OPEN-PRODUCT',
+    SET_VIEW_PRODUCT = 'SET-VIEW-PRODUCT';
+
 
 export let openCategoryAC = (carID) => ({type: OPEN_CATEGORY, carID});
+export let closeCategory = () => ({type: CLOSE_CATEGORY});
+export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
+
+export let openProductAC = (ProductID) =>({type:OPEN_PRODUCT,ProductID})
+
+export let setViewProductAC = (Product) => ({type: SET_VIEW_PRODUCT, Product});
 export let openSubCategoryAC = (categoryID) => ({type: OPEN_SUB_CATEGORY, categoryID});
 export let openTitleAC = (subCategoryID) => ({type: OPEN_TITLE, subCategoryID});
-
 export let closeTitle = () => ({type: CLOSE_TITLE});
-export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
-export let closeCategory = () => ({type: CLOSE_CATEGORY});
 
+export let closeSubCategory = () => ({type: CLOSE_SUB_CATEGORY});
 export let upCount = () => ({type: UP_COUNT});
 export let downCount = () => ({type: DOWN_COUNT});
 export let addInCart = () => ({type: ADD_IN_CART});
 export let closeShoppingCart = () => ({type: CLOSE_SHOPPING_CART});
-export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
 
+export let openShoppingCart = () => ({type: OPEN_SHOPPING_CART});
 export let setItemsAC = (Part) => ({type: SET_ITEMS, Part});
-export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
 export let setCategoryAC = (Category) => ({type: SET_CATEGORY, Category});
 export let setSubCategoryAC = (SubCategory) => ({type: SET_SUB_CATEGORY, SubCategory});
 export let showMoneyOnCart = () => ({type: SHOW_CART_ALL_MONEY});
@@ -44,20 +51,13 @@ let initialState = {
     CarItems: [],
     Category: [],
     SubCategory: [],
-    SubCategoryID: 0 ,
-    viewProduct: {
-        id: 0,
-        ObjName: 'Квадрат Малевича',
-        ObjCount: 10,
-        ObjCountView: 1,
-        ObjDescription: 'Ультракомпактная мультимедийная' +
-            ' беспроводная клавиатура с USB-интерфейсом, выполненная из высококачественных' +
-            ' материалов с прочным металлическим основанием. Комфортные клавиши с мягким' +
-            ' ноутбучным ходом обеспечивают великолепные тактильные' +
-            ' ощущения во время работы, а также низкий уровень шума.',
-        ObjImg: '//',
-        ObjPrice: 1477,
-        ObjTotalPrice: 1477,
+    SubCategoryID: 0,
+    ProductID:0,
+    IDZ:0,
+    Product:[],
+    CountTotal: {
+        TotalPrice: 0,
+        CountItem: 1,
     },
     titleUnderBlock: {
         titleChooseCar: ' Выберите машину',
@@ -73,23 +73,28 @@ let initialState = {
         categoryDisplay: 'flex',
         subCategoryDisplay: 'flex',
         totalItem: 'flex'
-
     },
-    idCart: {
+    blackTheme: {},
+    IP: '192.168.1.104',
+    idPart: {
         Car: '0',
         Category: '0',
         SubCategory: '0',
     },
     CartMoney: 0,
+    ID:0,
 }
 const mainReducer = (state = initialState, action) => {
     let stateCopy = {
         ...state,
         styleBlock: {...state.styleBlock},
         titleUnderBlock: {...state.titleUnderBlock},
-        idCart: {...state.idCart}
+        idPart: {...state.idPart}
     }
     switch (action.type) {
+        case BLACK_SEARCH: {
+            return {}
+        }
         case SET_CAR: {
             return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//поглащаем новые жертвы
         }
@@ -101,6 +106,9 @@ const mainReducer = (state = initialState, action) => {
         }
         case SET_ITEMS: {
             return {...state, Part: [...state.Part, ...action.Part]}//поглащаем новые жертвы
+        }
+        case SET_VIEW_PRODUCT: {
+            return {...state, Product: [...state.Product, ...action.Product]}//поглащаем новые жертвы
         }
         //открытие и закрытие корзины;
         case OPEN_SHOPPING_CART: {
@@ -126,13 +134,13 @@ const mainReducer = (state = initialState, action) => {
         case ADD_IN_CART: {
             let CartObj = {
                 id: state.Cart.length,
-                ObjName: state.viewProduct.ObjName,
-                ObjCount: state.viewProduct.ObjCount,
-                ObjCountView: state.viewProduct.ObjCountView,
-                ObjDescription: state.viewProduct.ObjDescription,
-                ObjImg: state.viewProduct.ObjImg,
-                ObjPrice: state.viewProduct.ObjPrice,
-                ObjTotalPrice: state.viewProduct.ObjTotalPrice,
+                ObjName: state.Product.ObjName,
+                ObjCount: state.Product.ObjCount,
+                ObjCountView: state.Product.ObjCountView,
+                ObjDescription: state.Product.ObjDescription,
+                ObjImg: state.Product.ObjImg,
+                ObjPrice: state.Product.ObjPrice,
+                ObjTotalPrice: state.Product.ObjTotalPrice,
             }
             let stateCopy = {...state}
             stateCopy.Cart.push(CartObj);
@@ -141,46 +149,50 @@ const mainReducer = (state = initialState, action) => {
             for (let i = 0; i < state.Cart.length; i++) {
                 stateCopy.CartMoney += stateCopy.Cart[i].ObjTotalPrice;
             }
-            console.log(state.Cart);
             return stateCopy;
         }
         // Функции для увеличения кол-во товаров и оконочательной суммы и наоборот
         case UP_COUNT: {
             let stateCopy = {...state};
-            stateCopy.viewProduct = {...state.viewProduct};
-            if (stateCopy.viewProduct.ObjCountView < stateCopy.viewProduct.ObjCount) {
-                stateCopy.viewProduct.ObjCountView += 1;
-                stateCopy.viewProduct.ObjTotalPrice += stateCopy.viewProduct.ObjPrice;
+            stateCopy.Product = {...state.Product};
+            if (stateCopy.Product.ObjCountView < stateCopy.Product.ObjCount) {
+                stateCopy.Product.ObjCountView += 1;
+                stateCopy.Product.ObjTotalPrice += stateCopy.Product.ObjPrice;
             }
             return stateCopy;
         }
         case DOWN_COUNT: {
             let stateCopy = {...state};
-            stateCopy.viewProduct = {...state.viewProduct};
-            if (stateCopy.viewProduct.ObjCountView > 1) {
-                stateCopy.viewProduct.ObjCountView -= 1;
-                stateCopy.viewProduct.ObjTotalPrice -= stateCopy.viewProduct.ObjPrice;
+            stateCopy.Product = {...state.Product};
+            if (stateCopy.Product.ObjCountView > 1) {
+                stateCopy.Product.ObjCountView -= 1;
+                stateCopy.Product.ObjTotalPrice -= stateCopy.Product.ObjPrice;
             }
             return stateCopy;
         }
         /*функции для открытия и закрытя категорий*/
         case OPEN_CATEGORY: {
-            stateCopy.idCart.Car = action.carID;
+            stateCopy.idPart.Car = action.carID;
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseCategory;
-            console.log(stateCopy.idCart);
+            console.log(stateCopy.idPart);
             return stateCopy;
         }
         case OPEN_SUB_CATEGORY: {
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleChooseSubCategory;
-            stateCopy.idCart.Category = action.categoryID;
-            let ID=parseInt(action.categoryID,10)
-            stateCopy.SubCategoryID = ID;
+            stateCopy.idPart.Category = action.categoryID;
+            stateCopy.ID = parseInt(action.categoryID, 10)
+            stateCopy.SubCategoryID = stateCopy.ID;
             return stateCopy;
         }
+
         case OPEN_TITLE: {
             stateCopy.nowTitleUnderBlock = stateCopy.titleUnderBlock.titleTotalItem;
-            stateCopy.idCart.SubCategory = action.subCategoryID;
-            console.log(stateCopy.idCart);
+            stateCopy.idPart.SubCategory = action.subCategoryID;
+            return stateCopy;
+        }
+        case OPEN_PRODUCT: {
+            stateCopy.IDZ = action.ProductID;
+            console.log('хрень:'+ action.ProductID);
             return stateCopy;
         }
         case CLOSE_TITLE: {
