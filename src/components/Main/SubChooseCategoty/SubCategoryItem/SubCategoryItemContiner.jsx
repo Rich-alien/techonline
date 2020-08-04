@@ -6,12 +6,13 @@ let mapStateToProps = (state) => {
     return {
         products: state.mainPage.SubCategory,
         IDsc:state.mainPage.SubCategoryID,
+        clearObj: state.mainPage.Part,
     }
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        openTitle: () => {
-            dispatch(openTitleAC());
+        openTitle: (subCategoryID) => {
+            dispatch(openTitleAC(subCategoryID));
         },
         setSubCategory: (items) => {
             dispatch(setSubCategoryAC(items));

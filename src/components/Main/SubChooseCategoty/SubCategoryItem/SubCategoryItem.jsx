@@ -6,6 +6,9 @@ import {NavLink} from "react-router-dom";
 
 class SubCategoryItem extends React.Component {
     componentDidMount() {
+        while (this.props.clearObj.length > 0) {
+            this.props.clearObj.pop();
+        }
         let ID = this.props.IDsc
         if (this.props.products.length === 0) {
             axios.get("http://localhost:3000/Category").then(response => {
@@ -14,16 +17,14 @@ class SubCategoryItem extends React.Component {
         }
     }
 
-    openTitleNow = () => {
-        this.props.openTitle();
-    }
+
 
     render() {
         return (
             <NavLink to='/cart' className={style.Subcontainer}>
                 {
                     this.props.products.map(u =>
-                        <button key={parseInt(u.id, 10)} onClick={this.openTitleNow} className={style.SubcontainerItem}>
+                        <button key={parseInt(u.id, 10)} onClick={()=>{this.props.openTitle(u.id)}} className={style.SubcontainerItem}>
                         <p className={style.text}>
                             {
                                 u.name
