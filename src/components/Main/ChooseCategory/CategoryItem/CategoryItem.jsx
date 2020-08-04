@@ -10,7 +10,7 @@ class CategoryItem extends React.Component {
             this.props.clearObj.pop();
         }
         if (this.props.products.length === 0) {
-            axios.get("http://localhost:3000/Category").then(response => {
+            axios.get("http://192.168.1.101:3000/Category").then(response => {
                 this.props.setCategory(response.data)
             });
         }

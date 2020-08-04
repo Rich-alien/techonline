@@ -11,7 +11,7 @@ class SubCategoryItem extends React.Component {
         }
         let ID = this.props.IDsc
         if (this.props.products.length === 0) {
-            axios.get("http://localhost:3000/Category").then(response => {
+            axios.get("http://192.168.1.101:3000/Category").then(response => {
                 this.props.setSubCategory(response.data[ID].subcategory)
             });
         }

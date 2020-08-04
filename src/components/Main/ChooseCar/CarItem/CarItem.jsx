@@ -10,7 +10,7 @@ class CarItem extends React.Component {
 
         if(this.props.products.length === 0) {
 
-            axios.get("http://localhost:3000/Car").then(response => {
+            axios.get("http://192.168.1.101:3000/Car").then(response => {
 
                 this.props.setCar(response.data)
 
