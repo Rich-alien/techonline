@@ -5,6 +5,7 @@ import Item from "./Item";
 let mapStateToProps = (state) => {
     return {
         products: state.mainPage.Part,
+        clearObj: state.mainPage.Part
     }
 }
 let mapDispatchToProps = (dispatch) => {
