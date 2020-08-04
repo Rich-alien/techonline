@@ -1,28 +1,31 @@
-
 import ItemDescription from "./ItemDescription";
-import {downCount, upCount, addInCart,} from "../../Redux/mainReducer";
+import {downCount, upCount, addInCart, setViewProductAC,} from "../../Redux/mainReducer";
 import {connect} from "react-redux";
 
 
 let mapStateToProps = (state) => {
-    return{
-        viewProduct :state.mainPage.viewProduct,
-        blur:state.mainPage.styleBlock.blur,
+    return {
+        product: state.mainPage.Product,
+        ID: state.mainPage.IDZ,
+
     }
 }
 let mapDispatchToProps = (dispatch) => {
-    return{
-         upCountNow : () => {
+    return {
+        upCountNow: () => {
             dispatch(upCount());
         },
-         downCountNow : () => {
+        setViewProduct: (viewProduct) => {
+            dispatch(setViewProductAC(viewProduct));
+        },
+        downCountNow: () => {
             dispatch(downCount());
         },
-         addInCartNow : () => {
+        addInCartNow: () => {
             dispatch(addInCart())
         },
     }
 }
-const ItemDescriptionContainer =  connect(mapStateToProps,mapDispatchToProps)(ItemDescription);
+const ItemDescriptionContainer = connect(mapStateToProps, mapDispatchToProps)(ItemDescription);
 
 export default ItemDescriptionContainer;
