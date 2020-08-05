@@ -27,11 +27,11 @@ class Main extends React.Component{
                 <div className={style.main}>
                     <NavBarContainer/>
                     <Route path='/search' render={() => <SearchPage/>}/>
-                    <Route path='/product' render={() => <ItemDescriptionContainer/>}/>
+                    <Route path={'/product/'+this.props.ID} render={() => <ItemDescriptionContainer/>}/>
                     <Route path='/car' render={() => <ChooseCarContainer/>}/>
                     <Route path='/category' render={() => <ChooseCategoryContainer/>}/>
                     <Route path='/subCategory' render={() => <SubChooseCategoryContainer/>}/>
-                    <Route path='/cart' render={() => <TotalItemContainer/>}/>
+                    <Route path='/product' render={() => <TotalItemContainer/>}/>
                     <Footer/>
                 </div>
             </BrowserRouter>
