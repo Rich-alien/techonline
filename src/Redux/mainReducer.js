@@ -15,7 +15,7 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
     SET_CATEGORY = 'SET-CATEGORY',
     SET_SUB_CATEGORY = 'SET-SUB-CATEGORY',
     DOWN_COUNT = 'DOWN-COUNT',
-    BLACK_SEARCH = 'BLACK-SEARCH',
+    DARK_SEARCH = 'DARK-SEARCH',
     OPEN_PRODUCT = 'OPEN-PRODUCT',
     SET_VIEW_PRODUCT = 'SET-VIEW-PRODUCT';
 
@@ -23,8 +23,8 @@ const OPEN_CATEGORY = 'OPEN-CATEGORY',
 export let openCategoryAC = (carID) => ({type: OPEN_CATEGORY, carID});
 export let closeCategory = () => ({type: CLOSE_CATEGORY});
 export let setCarAC = (CarItems) => ({type: SET_CAR, CarItems});
-
-export let openProductAC = (ProductID) =>({type:OPEN_PRODUCT,ProductID})
+export let darkSearchAC = () => ({type: DARK_SEARCH});
+export let openProductAC = (ProductID) => ({type: OPEN_PRODUCT, ProductID})
 
 export let setViewProductAC = (Product) => ({type: SET_VIEW_PRODUCT, Product});
 export let openSubCategoryAC = (categoryID) => ({type: OPEN_SUB_CATEGORY, categoryID});
@@ -52,9 +52,9 @@ let initialState = {
     Category: [],
     SubCategory: [],
     SubCategoryID: 0,
-    ProductID:0,
-    IDZ:0,
-    Product:[],
+    ProductID: 0,
+    IDZ: 0,
+    Product: [],
     CountTotal: {
         TotalPrice: 0,
         CountItem: 1,
@@ -74,7 +74,12 @@ let initialState = {
         subCategoryDisplay: 'flex',
         totalItem: 'flex'
     },
-    blackTheme: {},
+
+    darkTheme: {
+        svgColor: "#2c3e50",
+        bgc: "#FFFFFF",
+        color: "#050816"
+    },
     IP: '192.168.1.104',
     idPart: {
         Car: '0',
@@ -82,18 +87,22 @@ let initialState = {
         SubCategory: '0',
     },
     CartMoney: 0,
-    ID:0,
+    ID: 0,
 }
 const mainReducer = (state = initialState, action) => {
     let stateCopy = {
         ...state,
         styleBlock: {...state.styleBlock},
         titleUnderBlock: {...state.titleUnderBlock},
-        idPart: {...state.idPart}
+        idPart: {...state.idPart},
+        darkTheme: {...state.darkTheme}
     }
     switch (action.type) {
-        case BLACK_SEARCH: {
-            return {}
+        case DARK_SEARCH: {
+            stateCopy.darkTheme.bgc = 'black';
+            stateCopy.darkTheme.svgColor = "#ffffff";
+            stateCopy.darkTheme.color = "#ffffff"
+            return stateCopy;
         }
         case SET_CAR: {
             return {...state, CarItems: [...state.CarItems, ...action.CarItems]}//поглащаем новые жертвы
@@ -192,7 +201,7 @@ const mainReducer = (state = initialState, action) => {
         }
         case OPEN_PRODUCT: {
             stateCopy.IDZ = action.ProductID;
-            console.log('хрень:'+ action.ProductID);
+            // console.log('хрень:' + action.ProductID);
             return stateCopy;
         }
         case CLOSE_TITLE: {
