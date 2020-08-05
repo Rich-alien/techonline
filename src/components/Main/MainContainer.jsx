@@ -5,6 +5,7 @@ import Main from "./Main";
 let mapStateToProps = (state) => {
     return {
         products: state.mainPage.CarItems,
+        ID:state.mainPage.IDZ
     }
 }
 let mapDispatchToProps = (dispatch) => {
