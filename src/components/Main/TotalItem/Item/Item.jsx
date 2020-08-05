@@ -20,7 +20,7 @@ class Item extends React.Component {
                 {
 
                     this.props.products.map(u =>
-                        <NavLink to='/product' key={u.id} onClick={() => {
+                        <NavLink to={'/product/' + u.id} key={u.id} onClick={() => {
                             this.props.openProduct(u.id)
                         }} className={style.blockContainer}>
                             <div className={style.ObjImg}>
