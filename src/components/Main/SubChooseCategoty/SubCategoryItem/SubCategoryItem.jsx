@@ -21,7 +21,7 @@ class SubCategoryItem extends React.Component {
 
     render() {
         return (
-            <NavLink to='/cart' className={style.Subcontainer}>
+            <NavLink to='/product' className={style.Subcontainer}>
                 {
                     this.props.products.map(u =>
                         <button key={parseInt(u.id, 10)}
