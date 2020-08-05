@@ -328,17 +328,20 @@
   "Car": [
     {
       "id": "0",
-      "name": "Lada1",
+      "UrlName": "Xyesta",
+      "name": "Vesta",
       "image": "url"
     },
     {
       "id": "1",
-      "name": "Lada2",
+      "UrlName": "4x4",
+      "name": "4x4",
       "image": "url"
     },
     {
       "id": "2",
-      "name": "Lada3",
+      "UrlName": "Granta",
+      "name": "granta",
       "image": "url"
     },
     {
