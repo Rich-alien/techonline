@@ -16,7 +16,7 @@ class NavBar extends React.Component {
         return (
             <div className={style.container} style={{backgroundColor: this.props.DarkTheme.bgc}}>
                 <nav className={style.nav}>
-                    <NavLink className={style.linkLogo} to='/car'>
+                    <NavLink className={style.linkLogo} to='/'>
                         <div style={{color: this.props.DarkTheme.color}} className={style.logo}>
                             SLADA
                         </div>
