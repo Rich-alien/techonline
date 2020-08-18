@@ -7,6 +7,7 @@ let mapStateToProps = (state) => {
         products: state.mainPage.SubCategory,
         IDsc:state.mainPage.SubCategoryID,
         clearObj: state.mainPage.Part,
+        IP:state.mainPage.IP
     }
 }
 let mapDispatchToProps = (dispatch) => {

@@ -19,11 +19,11 @@ class ItemDescription extends React.Component {
             this.props.product.pop();
         }
         if (this.props.product.length === 0) {
-            axios.get("http://192.168.1.101:3000/Part").then(response => {
+            axios.get('http://'+this.props.IP+':3000/Part').then(response => {
                 let intID = this.props.ID;
-                console.log(intID);
+                // console.log(intID);
                 this.props.setViewProduct([response.data[intID]]);
-                console.log(this.props.ID);
+                // console.log(this.props.ID);
             });
         }
     }

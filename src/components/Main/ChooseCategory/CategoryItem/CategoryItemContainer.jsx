@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 let mapStateToProps = (state) => {
     return {
         products: state.mainPage.Category,
-        clearObj: state.mainPage.SubCategory
+        clearObj: state.mainPage.SubCategory,
+        IP:state.mainPage.IP,
     }
 }
 let mapDispatchToProps = (dispatch) => {

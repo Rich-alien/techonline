@@ -7,6 +7,7 @@ let mapStateToProps = (state) => {
     return {
         product: state.mainPage.Product,
         ID: state.mainPage.IDZ,
+        IP:state.mainPage.IP
 
     }
 }

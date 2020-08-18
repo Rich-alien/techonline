@@ -9,7 +9,7 @@ class Item extends React.Component {
         while (this.props.clearObj.length > 0) {
             this.props.clearObj.pop();
         }
-        axios.get("http://192.168.1.101:3000/Part").then(response => {
+        axios.get('http://'+this.props.IP+':3000/Part').then(response => {
             this.props.setItems(response.data)
         });
     }
