@@ -22,6 +22,7 @@ class ItemDescription extends React.Component {
             axios.get('http://'+this.props.IP+':3000/Part').then(response => {
                 let intID = this.props.ID;
                 // console.log(intID);
+                //разобраться с этим!!!!!!!!
                 this.props.setViewProduct([response.data[intID]]);
                 // console.log(this.props.ID);
             });
