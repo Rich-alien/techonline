@@ -80,7 +80,7 @@ let initialState = {
         bgc: "#FFFFFF",
         color: "#050816"
     },
-    IP: '192.168.1.104',
+    IP: 'localhost',
     idPart: {
         Car: '0',
         Category: '0',
