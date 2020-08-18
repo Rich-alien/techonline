@@ -34,7 +34,7 @@ class NavBar extends React.Component {
                         <Logo style={{stroke: this.props.DarkTheme.svgColor}}/>
                     </button>
 
-                    <button onClick={this.openShoppingCartNow}
+                    <NavLink to ='/cart' onClick={this.openShoppingCartNow}
                             className={`${style.btnCart} ${style.btnHover} ${style.btn}`}>
                         <Logo2 style={{stroke: this.props.DarkTheme.svgColor}}/>
                         {/*<div className={style.containerCount}>*/}
@@ -45,7 +45,7 @@ class NavBar extends React.Component {
                         {/*</div>*/}
                         {/*    fix уменьшение корзины */}
 
-                    </button>
+                    </NavLink>
                     {/*<CartContainer store={this.props.store}/>*/}
                     {/*    заменить картинки для btnFavorite and btnCart*/}
                 </nav>
