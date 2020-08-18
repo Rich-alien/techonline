@@ -17,18 +17,19 @@ class CarItem extends React.Component {
             <div className={style.container}>
                 <Carousel breakPoints={this.breakPoints}>
                     {
-                        this.props.products.map(u =>
+                        this.props.products.map((u, index) =>
                                 <NavLink to='/category' className={style.containerItem} onClick={() => {
                                     this.props.openCategory(u.id)
-                                }} key={parseInt(u.id, 10)}>
-                                    <img className={style.imgCar} src={carImg} alt="love"/>
-                                    <div className={style.CarNameBlock}>
-                                        <h1 className={style.CarName}>
-                                            {
+                                }} key={index}>
+                                    <div className={style.carContainer}>
+                                        <img className={style.imgCar} src={carImg} alt="love"/>
+                                        <div className={style.CarNameBlock}>
+                                            <h1 className={style.CarName}>{
                                                 u.name
-                                            }
-                                        </h1>
+                                            }</h1>
+                                        </div>
                                     </div>
+
                                 </NavLink>
                             //реализовать круглый карусельку для прокрутки машин, боковые уменьшены
                             //добавить промокоды !
