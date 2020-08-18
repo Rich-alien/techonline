@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './ChooseCar.module.css'
 import CarItemContainer from "./CarItem/CarItemContainer";
+import ShareProductsContainer from "../../ShareProducts/ShareProductsContainer";
 
 class ChooseCar extends React.Component {
     render() {
@@ -17,6 +18,7 @@ class ChooseCar extends React.Component {
                 <div className={style.containerSlider}>
                     <CarItemContainer/>
                 </div>
+                <ShareProductsContainer/>
             </div>
         )
     }
