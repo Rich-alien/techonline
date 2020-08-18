@@ -29,7 +29,7 @@ class Main extends React.Component {
                     <NavBarContainer/>
                     <Route path='/search' render={() => <SearchPage/>}/>
                     <Route path={'/product/' + this.props.ID} render={() => <ItemDescriptionContainer/>}/>
-                    <Route path='/car' render={() => <ChooseCarContainer/>}/>
+                    <Route exact path='/' render={() => <ChooseCarContainer/>}/>
                     <Route path='/category' render={() => <ChooseCategoryContainer/>}/>
                     <Route path='/subCategory' render={() => <SubChooseCategoryContainer/>}/>
                     <Route exact path='/product' render={() => <TotalItemContainer/>}/>
