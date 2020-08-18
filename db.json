@@ -328,19 +328,16 @@
   "Car": [
     {
       "id": "0",
-      "UrlName": "Xyesta",
       "name": "Vesta",
       "image": "url"
     },
     {
       "id": "1",
-      "UrlName": "4x4",
       "name": "4x4",
       "image": "url"
     },
     {
       "id": "2",
-      "UrlName": "Granta",
       "name": "granta",
       "image": "url"
     },
