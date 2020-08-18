@@ -14,7 +14,7 @@ class Cart extends React.Component {
         this.props.closeShoppingCartNow();
     }
     // componentDidUpdate для открытия корзины!
-
+//при возрате брать тот же id что берется при клике на определенный товар!
     render() {
         return (
             <div style={{display: this.props.styleDisplay.shoppingCart}} className={style.container}>
