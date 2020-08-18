@@ -3,7 +3,8 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    margin:  auto;
+    margin: 0 auto;
+    align-items: center;
 }
 .containerSlider{
     width: 100%;
